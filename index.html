@@ -1,1082 +1,550 @@
 <!DOCTYPE html>
-<!-- saved from url=(0088)https://yaraqah.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=38764545 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>View Source</title>
-        <link rel="canonical" href="https://yaraqah.atlassian.net/wiki/pages/viewpage.action?pageId=$action.page.id">
-        <script nonce="">
-window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
-WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\"/wiki\"";
-WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-rest:curl.cross-origin-resources"]="false";
-if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
-<link type="text/css" rel="stylesheet" nonce="" href="./View Source_files/batch.css" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
-<link type="text/css" rel="stylesheet" nonce="" href="./View Source_files/batch(1).css" data-wrm-key="plugin.viewsource,-_super" data-wrm-batch-type="context" media="all">
-<link type="text/css" rel="stylesheet" nonce="" href="./View Source_files/batch(2).css" data-wrm-key="page,-_super" data-wrm-batch-type="context" media="all">
-<link type="text/css" rel="stylesheet" nonce="" href="./View Source_files/batch(3).css" media="print" data-wrm-key="page,-_super" data-wrm-batch-type="context">
-<link type="text/css" rel="stylesheet" nonce="" href="./View Source_files/batch(4).css" data-wrm-key="editor-content,-_super" data-wrm-batch-type="context" media="all">
-<!--[if lte IE 9]>
-<link type="text/css" rel="stylesheet" nonce="0e8e25a78a4a4d639308b8981e2f0f76" href="//d1e73uzw72uijn.cloudfront.net/yaraqah.atlassian.net/wiki/s/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855-CDN/-1951744306/h/0b7fdcf80eca1d84a902e6dabb614efeb825d707a7a20767e45bb45e312137d7/_/download/contextbatch/css/editor-content,-_super/batch.css?assetVersion=1000.0.0-f3bdb7b9e6df19827&amp;conditionalComment=lte+IE+9&amp;confluence.table.resizable=true&amp;externals=__local-default__&amp;relative-url=true" data-wrm-key="editor-content,-_super" data-wrm-batch-type="context" media="all">
-<![endif]-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedad Salem — Game Programmer</title>
+<meta name="description" content="Wedad Salem — Unity / C# game programmer building gameplay systems, mechanics, and UI since 2021.">
 
-    </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <body class="mceContentBody aui-theme-default wiki-content fullsize">
-        <p>&nbsp;</p>         <h1>Battle Simulator</h1><h2><strong>Installation GUIDE</strong></h2><table class="wysiwyg-macro" data-macro-name="note" data-macro-id="c36f3677-ca8a-4666-bb5e-8ed917d3e20b" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e25vdGV9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><ul><li><p>Unity Version: 6000.0.2f1</p></li><li><p>ECS Version: 1.2.1</p></li></ul></td></tr></tbody></table><ac:adf-fragment-mark><ac:adf-fragment-mark-detail local-id="563eaaa8-8a07-4395-9fbc-e805f3b05c2c"></ac:adf-fragment-mark-detail></ac:adf-fragment-mark><table data-table-width="760" data-layout="default" data-local-id="a6fb8679-82a4-4b8c-bf99-dfaad679965f" class="confluenceTable"><tbody><tr><th class="confluenceTh"><h2>About</h2><p>The game is about two opposing teams - a <span style="color: rgb(76,154,255);">blue team</span> and a <span style="color: rgb(255,86,48);">red team</span>. The red team's lineup is randomly generated, while the blue team's lineup is chosen by the player to create the best possible lineup to defeat the red team.</p></th><th data-highlight-colour="#ffffff" class="confluenceTh"><h2>Project Info</h2><p>Role: Game Programmer</p><p>Team Size: 1</p><p>Time frame: 2 week</p><p>Engine: Unity (C#)</p><a href="https://github.com/weex1997/BattleSimulator.git"><img class="confluence-embedded-image image-center" alt="Octicons-mark-github.svg" width="230" loading="lazy" src="./View Source_files/Octicons-mark-github.svg" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/Octicons-mark-github.svg?version=1&amp;modificationDate=1719371230005&amp;cacheVersion=1&amp;api=v2" data-unresolved-comment-count="0" data-linked-resource-id="49020937" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Octicons-mark-github.svg" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/svg+xml" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="990cd924-ce76-4afa-939d-494bb571c265" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Octicons-mark-github.svg" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Octicons-mark-github.svg" data-image-height="1280" data-image-width="1280"></a><p></p></th></tr></tbody></table><h2><strong>Technical Documentation</strong></h2><h3><strong>Initial Setup</strong></h3><p><strong>Spawning:</strong> The team members will appear on a 3x3 grid determined by the team's lineup, you can add team lineup data by adding a new scriptable object. and the system will spawn the units depending on the data. for the prototype, I create 4 lineups.</p><table class="wysiwyg-macro" data-macro-name="info" data-macro-id="37f546b6-0e15-4714-a20b-4d56b8c03aec" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2luZm99&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p>The system adjusts for anything you want to change like the grid or adding many lineups.</p></td></tr></tbody></table><img class="confluence-embedded-image image-center" width="580" loading="lazy" src="./View Source_files/kxOi8wlELbJ9Ir3hjnI3NgHhZ4Qaw4-qapkTl8uU0f37QfPZuahlGAUs263y_HnOUCV_C3gk9Sosukj9kE4-7g7T4so_wzvU1qEqwvD07Cnxrg3vny5ehqed6iq73I2kVJLe2ZjCEgOfoHOb3WmRd_U" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/kxOi8wlELbJ9Ir3hjnI3NgHhZ4Qaw4-qapkTl8uU0f37QfPZuahlGAUs263y_HnOUCV_C3gk9Sosukj9kE4-7g7T4so_wzvU1qEqwvD07Cnxrg3vny5ehqed6iq73I2kVJLe2ZjCEgOfoHOb3WmRd_U?version=1&amp;modificationDate=1715707752356&amp;cacheVersion=1&amp;api=v2" data-height="1118" data-width="1600" data-unresolved-comment-count="0" data-linked-resource-id="38764562" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="kxOi8wlELbJ9Ir3hjnI3NgHhZ4Qaw4-qapkTl8uU0f37QfPZuahlGAUs263y_HnOUCV_C3gk9Sosukj9kE4-7g7T4so_wzvU1qEqwvD07Cnxrg3vny5ehqed6iq73I2kVJLe2ZjCEgOfoHOb3WmRd_U" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="618aecd9-6d73-4280-9bfc-a6c0f9b6f8f6" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; kxOi8wlELbJ9Ir3hjnI3NgHhZ4Qaw4-qapkTl8uU0f37QfPZuahlGAUs263y_HnOUCV_C3gk9Sosukj9kE4-7g7T4so_wzvU1qEqwvD07Cnxrg3vny5ehqed6iq73I2kVJLe2ZjCEgOfoHOb3WmRd_U" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; kxOi8wlELbJ9Ir3hjnI3NgHhZ4Qaw4-qapkTl8uU0f37QfPZuahlGAUs263y_HnOUCV_C3gk9Sosukj9kE4-7g7T4so_wzvU1qEqwvD07Cnxrg3vny5ehqed6iq73I2kVJLe2ZjCEgOfoHOb3WmRd_U" data-image-height="894" data-image-width="1280"><p>So, I create a scriptable object have a list of <code>vector2</code> to store x and y for each unit then in baker script I store the x , y in <code>DynamicBuffer</code> as <code>float2</code> to use it because ECS not support <code>List</code>, and <code>DynamicBuffer</code> works instead</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="680ac049-d8ff-4d28-ba80-8df728104989" data-macro-parameters="title=UnitsCoordinatesConfiguration.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Vbml0c0Nvb3JkaW5hdGVzQ29uZmlndXJhdGlvbi5jc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="512610ef-0e48-4ecb-b797-46c0ce9fab5d" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>[CreateAssetMenu(fileName = "Lineup",
- menuName = "Scriptable Object/Units Coordinates",
- order = 2)]
-public class UnitsCoordinatesConfiguration : ScriptableObject
-{
-    public List&lt;Vector2&gt; Coordinates = new List&lt;Vector2&gt;();
-}</pre></td></tr></tbody></table></td></tr></tbody></table><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="a52eae4a-f1eb-4b8b-97f9-6765c9bb4f5f" data-macro-parameters="title=CoordinatesGridBuffer.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Db29yZGluYXRlc0dyaWRCdWZmZXIuY3N9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="ae87a315-8ec7-4c63-b473-5efa91dfd152" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>[InternalBufferCapacity(5)]
-public struct CoordinatesGridBuffer : IBufferElementData
-{
-    public float2 axis;
-}</pre></td></tr></tbody></table></td></tr></tbody></table><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="0efa513a-4c4a-43df-8d4a-713cb6e42d5c" data-macro-parameters="title=LineupsMono.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MaW5ldXBzTW9uby5jc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="48001058-692a-43d2-b897-21d6e5bf5263" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>class LineupsMono : MonoBehaviour
-{
-    public CoordinatesGridConfigration coordinatesGridConfigration;
-}
+<style>
+  :root{
+    --void: #0B0F14;
+    --panel: #121A23;
+    --panel-2: #0E141B;
+    --hairline: #243140;
+    --amber: #E8A33D;
+    --cyan: #5EC8E0;
+    --crimson: #D6553B;
+    --text: #DCE3EA;
+    --text-dim: #93A1B0;
 
-class LineupsBaker : Baker&lt;LineupsMono&gt;
-{
-    public override void Bake(LineupsMono authoring)
-    {
-        var entity = GetEntity(TransformUsageFlags.Dynamic);
+    --font-display: "Chakra Petch", "Rajdhani", sans-serif;
+    --font-body: "IBM Plex Sans", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
 
+    --maxw: 1100px;
+  }
 
-        DynamicBuffer&lt;CoordinatesGridBuffer&gt; 
-        pathBuffer = AddBuffer&lt;CoordinatesGridBuffer&gt;(entity);
-        foreach (float2 axis in authoring.coordinatesGridConfigration.Coordinates)
-        {
-            pathBuffer.Add(new CoordinatesGridBuffer() { axis = axis });
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  body{
+    margin: 0;
+    background: radial-gradient(1200px 700px at 50% -8%, rgba(94,200,224,0.08), transparent 60%), var(--void);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  a{ color: var(--cyan); text-decoration: none; }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  .bg-grid{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(94,200,224,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(94,200,224,0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.15) 60%, transparent 95%);
+  }
+
+  .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+
+  /* ---------- Topbar ---------- */
+  .topbar{
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 28px;
+    background: rgba(11,15,20,0.78);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .brand{ font-family: var(--font-display); font-weight: 700; letter-spacing: 0.04em; font-size: 1.1rem; }
+  .brand span{ color: var(--amber); }
+  .topnav{ display: flex; gap: 26px; }
+  .topnav a{
+    color: var(--text-dim); font-family: var(--font-mono); font-size: 0.78rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.15s ease;
+  }
+  .topnav a:hover{ color: var(--cyan); }
+  .status-pill{
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--text-dim); border: 1px solid var(--hairline); border-radius: 999px;
+    padding: 6px 12px;
+  }
+  .status-pill .dot{
+    width: 7px; height: 7px; border-radius: 50%; background: var(--amber);
+    box-shadow: 0 0 8px var(--amber);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{ opacity: 1; } 50%{ opacity: 0.35; } }
+
+  @media (max-width: 760px){ .topnav{ display: none; } }
+
+  /* ---------- Corner frame device ---------- */
+  .frame{ position: relative; }
+  .corner{ position: absolute; width: 20px; height: 20px; pointer-events: none; }
+  .corner.tl{ top: -1px; left: -1px; border-top: 2px solid var(--amber); border-left: 2px solid var(--amber); }
+  .corner.tr{ top: -1px; right: -1px; border-top: 2px solid var(--amber); border-right: 2px solid var(--amber); }
+  .corner.bl{ bottom: -1px; left: -1px; border-bottom: 2px solid var(--amber); border-left: 2px solid var(--amber); }
+  .corner.br{ bottom: -1px; right: -1px; border-bottom: 2px solid var(--amber); border-right: 2px solid var(--amber); }
+  .card .corner{ width: 14px; height: 14px; }
+  .card .corner.tl, .card .corner.tr, .card .corner.bl, .card .corner.br{ border-color: var(--cyan); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    margin: 48px auto 0; max-width: var(--maxw);
+    padding: 72px 48px 56px;
+    border: 1px solid var(--hairline);
+    background: linear-gradient(180deg, rgba(18,26,35,0.6), rgba(14,20,27,0.4));
+    overflow: hidden;
+  }
+  .eyebrow{
+    font-family: var(--font-mono); color: var(--cyan); letter-spacing: 0.12em;
+    font-size: 0.8rem; margin: 0 0 18px;
+  }
+  .hero h1{
+    font-family: var(--font-display); font-weight: 700; letter-spacing: 0.02em;
+    font-size: clamp(2.6rem, 6vw, 4.6rem); margin: 0 0 18px; line-height: 1.02;
+  }
+  .lede{ max-width: 620px; color: var(--text); font-size: 1.05rem; margin: 0 0 30px; }
+  .hero-actions{ display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+  .btn{
+    font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.06em;
+    padding: 12px 22px; border-radius: 2px; display: inline-block;
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .btn-primary{ background: var(--amber); color: var(--void); border: 1px solid var(--amber); }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .btn-ghost{ background: transparent; color: var(--text); border: 1px solid var(--hairline); }
+  .btn-ghost:hover{ border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+
+  .telemetry{
+    font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);
+    letter-spacing: 0.08em; border-top: 1px solid var(--hairline); padding-top: 16px;
+  }
+
+  .scan-sweep{
+    position: absolute; left: 0; right: 0; height: 2px; top: 0;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    opacity: 0.8;
+    animation: sweep 2.2s ease-out 1;
+  }
+  @keyframes sweep{
+    0%{ top: 0%; opacity: 0; }
+    10%{ opacity: 0.9; }
+    100%{ top: 100%; opacity: 0; }
+  }
+
+  /* ---------- Section shell ---------- */
+  main section, footer.contact{ padding: 92px 0 0; }
+  .eyebrow-mono{
+    font-family: var(--font-mono); color: var(--text-dim); font-size: 0.74rem;
+    letter-spacing: 0.12em; margin: 0 0 10px;
+  }
+  .section-title{
+    font-family: var(--font-display); font-weight: 600; letter-spacing: 0.03em;
+    font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 12px; color: var(--text);
+  }
+  .section-sub{ color: var(--text-dim); max-width: 560px; margin: 0 0 44px; }
+
+  .reveal{ opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+
+  /* ---------- Loadout ---------- */
+  .loadout-grid{
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px; padding-bottom: 8px;
+  }
+  .loadout-card{
+    border: 1px solid var(--hairline); background: var(--panel-2);
+    padding: 20px 18px; border-radius: 2px;
+  }
+  .loadout-card h3{
+    font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.1em;
+    color: var(--cyan); margin: 0 0 14px; text-transform: uppercase;
+  }
+  .chip-row{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip{
+    font-family: var(--font-mono); font-size: 0.78rem; color: var(--text);
+    border: 1px solid var(--hairline); padding: 5px 10px; border-radius: 2px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .chip:hover{ border-color: var(--amber); color: var(--amber); }
+
+  /* ---------- Timeline / Mission Log ---------- */
+  .timeline{ list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before{
+    content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px;
+    width: 1px; background: var(--hairline);
+  }
+  .timeline li{ position: relative; padding: 0 0 44px 38px; }
+  .timeline li:last-child{ padding-bottom: 4px; }
+  .timeline li::before{
+    content: ""; position: absolute; left: 0; top: 4px;
+    width: 15px; height: 15px; border-radius: 50%;
+    background: var(--panel-2); border: 2px solid var(--amber);
+  }
+  .tl-date{
+    font-family: var(--font-mono); font-size: 0.74rem; color: var(--amber);
+    letter-spacing: 0.06em; display: block; margin-bottom: 6px;
+  }
+  .tl-role{ font-family: var(--font-display); font-size: 1.18rem; font-weight: 600; margin: 0 0 2px; }
+  .tl-org{ color: var(--text-dim); font-size: 0.92rem; margin: 0 0 12px; }
+  .tl-list{ margin: 0; padding-left: 20px; color: var(--text); }
+  .tl-list li{ padding: 0; margin-bottom: 6px; }
+  .tl-list li::before{ content: none; }
+
+  /* ---------- Projects / Level Select ---------- */
+  .project-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  @media (max-width: 760px){ .project-grid{ grid-template-columns: 1fr; } }
+  .card{
+    position: relative; border: 1px solid var(--hairline); background: var(--panel);
+    padding: 26px 24px; transition: transform 0.18s ease, border-color 0.18s ease;
+  }
+  .card:hover{ transform: translateY(-3px); border-color: rgba(94,200,224,0.4); }
+  .card-tags{ display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .tag{
+    font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--cyan); border: 1px solid rgba(94,200,224,0.35);
+    padding: 3px 8px; border-radius: 999px;
+  }
+  .card h3{ font-family: var(--font-display); font-size: 1.25rem; margin: 0 0 4px; }
+  .card-meta{ font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); margin: 0 0 14px; }
+  .card ul{ margin: 0; padding-left: 18px; color: var(--text); font-size: 0.94rem; }
+  .card ul li{ margin-bottom: 8px; }
+
+  /* ---------- Education ---------- */
+  .edu-list{ display: flex; flex-direction: column; gap: 22px; }
+  .edu-item{ border-left: 2px solid var(--hairline); padding-left: 20px; }
+  .edu-item .tl-date{ margin-bottom: 4px; }
+  .edu-item h3{ font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 4px; }
+  .edu-item .tl-org{ margin-bottom: 8px; }
+  .edu-item p{ margin: 0; color: var(--text); font-size: 0.94rem; }
+
+  .lang-row{
+    display: flex; gap: 28px; margin-top: 34px; font-family: var(--font-mono);
+    font-size: 0.82rem; color: var(--text-dim); flex-wrap: wrap;
+  }
+  .lang-row strong{ color: var(--text); }
+
+  /* ---------- Contact / Open Channel ---------- */
+  footer.contact{
+    margin: 92px auto 60px; max-width: var(--maxw);
+    border: 1px solid var(--hairline); padding: 56px 48px;
+    background: linear-gradient(180deg, rgba(18,26,35,0.6), rgba(14,20,27,0.4));
+  }
+  .contact-grid{
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; margin-top: 36px;
+  }
+  .contact-item{ border: 1px solid var(--hairline); padding: 18px; background: var(--panel-2); }
+  .contact-item h4{
+    font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em;
+    color: var(--text-dim); text-transform: uppercase; margin: 0 0 8px;
+  }
+  .contact-item a, .contact-item span{ font-family: var(--font-body); font-size: 1rem; color: var(--text); }
+  .contact-item a:hover{ color: var(--cyan); }
+  .foot-note{
+    margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--hairline);
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+
+  @media (max-width: 600px){
+    .hero{ padding: 56px 24px 40px; }
+    footer.contact{ padding: 40px 24px; }
+    main section{ padding-top: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">WS<span>.</span></div>
+  <nav class="topnav">
+    <a href="#loadout">Loadout</a>
+    <a href="#experience">Mission Log</a>
+    <a href="#projects">Level Select</a>
+    <a href="#education">Training</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="status-pill"><span class="dot" aria-hidden="true"></span>OPEN TO WORK</div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero frame" id="top">
+    <span class="corner tl" aria-hidden="true"></span>
+    <span class="corner tr" aria-hidden="true"></span>
+    <span class="corner bl" aria-hidden="true"></span>
+    <span class="corner br" aria-hidden="true"></span>
+    <div class="scan-sweep" aria-hidden="true"></div>
+
+    <p class="eyebrow">// GAME PROGRAMMER — SAUDI ARABIA</p>
+    <h1>WEDAD SALEM</h1>
+    <p class="lede">Building gameplay systems, mechanics, and UI in Unity and C# since 2021, across studio and freelance work. Shipped a mobile game to Google Play with FitNot, programmed educational mini-games at GamifierSA, and mentored Unity students at DigiPen during Gamers8. I like owning a feature end-to-end — prototype the mechanic, ship it, then debug it on whatever device a real player is holding.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+    </div>
+    <p class="telemetry">COORDS 24.52°N 39.57°E &nbsp;·&nbsp; CODING SINCE 2021 &nbsp;·&nbsp; STATUS: OPEN TO FREELANCE &amp; FULL-TIME ROLES</p>
+  </section>
+
+  <section id="loadout">
+    <p class="eyebrow-mono">// 01 — SKILLS</p>
+    <h2 class="section-title">Loadout</h2>
+    <p class="section-sub">Tools and disciplines, grouped the way a project would actually need them.</p>
+
+    <div class="loadout-grid">
+      <div class="loadout-card reveal">
+        <h3>Languages</h3>
+        <div class="chip-row"><span class="chip">C#</span><span class="chip">Swift</span></div>
+      </div>
+      <div class="loadout-card reveal">
+        <h3>Engines &amp; Tools</h3>
+        <div class="chip-row"><span class="chip">Unity 3D</span><span class="chip">Xcode</span></div>
+      </div>
+      <div class="loadout-card reveal">
+        <h3>Gameplay Programming</h3>
+        <div class="chip-row"><span class="chip">Mechanics</span><span class="chip">UI Systems</span><span class="chip">Animation</span><span class="chip">Mobile Optimization</span></div>
+      </div>
+      <div class="loadout-card reveal">
+        <h3>Architecture &amp; Patterns</h3>
+        <div class="chip-row"><span class="chip">ECS / Data-Oriented Design</span><span class="chip">Observer Pattern</span></div>
+      </div>
+      <div class="loadout-card reveal">
+        <h3>Backend &amp; Services</h3>
+        <div class="chip-row"><span class="chip">PlayFab</span><span class="chip">Firebase</span></div>
+      </div>
+      <div class="loadout-card reveal">
+        <h3>Version Control</h3>
+        <div class="chip-row"><span class="chip">Git</span><span class="chip">GitHub</span></div>
+      </div>
+      <div class="loadout-card reveal">
+        <h3>Platforms</h3>
+        <div class="chip-row"><span class="chip">Mobile — Android</span><span class="chip">Mobile — iOS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <p class="eyebrow-mono">// 02 — EXPERIENCE</p>
+    <h2 class="section-title">Mission Log</h2>
+    <p class="section-sub">A chronological record, most recent first.</p>
+
+    <ol class="timeline">
+      <li class="reveal">
+        <span class="tl-date">2025 — PRESENT · REMOTE</span>
+        <h3 class="tl-role">Freelance Game Developer</h3>
+        <p class="tl-org">Independent</p>
+        <ul class="tl-list">
+          <li>Delivered Unity game development and software projects for clients on short-term contracts, owning features end-to-end from scope to delivery.</li>
+        </ul>
+      </li>
+      <li class="reveal">
+        <span class="tl-date">DEC 2023 — MAY 2024 · REMOTE</span>
+        <h3 class="tl-role">Game Programmer</h3>
+        <p class="tl-org">GamifierSA</p>
+        <ul class="tl-list">
+          <li>Shipped 3 mobile games as the sole or lead programmer on small teams, owning Unity / C# gameplay code from spec to release.</li>
+          <li>Collaborated closely with designers and artists across iteration cycles to refine mechanics and ship on schedule.</li>
+        </ul>
+      </li>
+      <li class="reveal">
+        <span class="tl-date">JUL 2023 — SEP 2023 · RIYADH, KSA</span>
+        <h3 class="tl-role">Game Development Instructor</h3>
+        <p class="tl-org">DigiPen Institute of Technology</p>
+        <ul class="tl-list">
+          <li>Mentored student teams during the Gamers8 program, guiding them from concept to a playable Unity build across a multi-week sprint.</li>
+        </ul>
+      </li>
+      <li class="reveal">
+        <span class="tl-date">OCT 2022 — APR 2023 · RIYADH, KSA</span>
+        <h3 class="tl-role">Game Developer (Accelerator)</h3>
+        <p class="tl-org">GameFounders</p>
+        <ul class="tl-list">
+          <li>Selected for an international games-focused accelerator; developed a game concept under industry mentorship and pitched to investors and publishers.</li>
+        </ul>
+      </li>
+      <li class="reveal">
+        <span class="tl-date">FEB 2022 — APR 2022 · REMOTE</span>
+        <h3 class="tl-role">Game Programmer</h3>
+        <p class="tl-org">FitNot</p>
+        <ul class="tl-list">
+          <li>Shipped a Unity mobile game to the Google Play Store, contributing across gameplay code, UI, and release.</li>
+          <li>Coordinated remotely with the team using Git and GitHub.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="projects">
+    <p class="eyebrow-mono">// 03 — SELECTED WORK</p>
+    <h2 class="section-title">Level Select</h2>
+    <p class="section-sub">Four builds, four different problems.</p>
+
+    <div class="project-grid">
+      <article class="card reveal">
+        <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span>
+        <span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+        <div class="card-tags"><span class="tag">itch.io</span><span class="tag">Unity · PC</span></div>
+        <h3>Cybersecurity Educational Game</h3>
+        <p class="card-meta">Freelance · 2025</p>
+        <ul>
+          <li>Designed and built a 4-stage educational game from scratch for a client, with a different gameplay mechanic per stage — drag-and-drop, shooter, card-sorting, and quiz.</li>
+          <li>Built supporting systems end-to-end: player auth, save data, in-game economy and shop, end-of-game certificate, and a performance report.</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span>
+        <span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+        <div class="card-tags"><span class="tag">GitHub</span><span class="tag">Unity · ECS / DOTS</span></div>
+        <h3>Battle Simulator</h3>
+        <p class="card-meta">Personal · 2024</p>
+        <ul>
+          <li>Unity ECS strategy game where players compose a Blue Team to counter a procedurally generated Red Team each match.</li>
+          <li>Built on a data-oriented architecture for modularity and performance at high entity counts — unit behaviors and stats can be swapped without touching combat code.</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span>
+        <span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+        <div class="card-tags"><span class="tag">GitHub</span><span class="tag">Unity · Mobile Web</span></div>
+        <h3>Albalsha-Beileid</h3>
+        <p class="card-meta">GamifierSA · 2024</p>
+        <ul>
+          <li>Sole programmer on a mobile web game launched for Eid al-Fitr, featuring a collection of quick, random mini-games inspired by Eid traditions.</li>
+          <li>Owned the full Unity codebase from gameplay logic to release.</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span>
+        <span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+        <div class="card-tags"><span class="tag">GitHub</span><span class="tag">Unity · Mobile</span></div>
+        <h3>Jaber Chem — Electron Configuration</h3>
+        <p class="card-meta">GamifierSA · 2024</p>
+        <ul>
+          <li>Programmed the complete Electron Configuration mini-game for Jaber Chem, an educational chemistry title.</li>
+          <li>Built a shooter-style mechanic where players fire electrons to fill atomic configurations.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <p class="eyebrow-mono">// 04 — TRAINING</p>
+    <h2 class="section-title">Training</h2>
+
+    <div class="edu-list">
+      <div class="edu-item reveal">
+        <span class="tl-date">OCT 2022 — JUN 2023 · RIYADH, KSA</span>
+        <h3>iOS App Developer Program</h3>
+        <p class="tl-org">Apple Developer Academy | TUWAIQ</p>
+        <p>9-month Challenge-Based Learning program. Shipped four iOS apps in Swift / Xcode with cross-functional teams.</p>
+      </div>
+      <div class="edu-item reveal">
+        <span class="tl-date">JUL 2021 — NOV 2021 · REMOTE</span>
+        <h3>Game Development Bootcamp</h3>
+        <p class="tl-org">Saudi Digital Academy × Coding Dojo</p>
+        <p>Intensive program covering Unity, C#, game design, UX, multiplayer patterns, and mobile publishing.</p>
+      </div>
+      <div class="edu-item reveal">
+        <span class="tl-date">JAN 2016 — APR 2021</span>
+        <h3>B.Sc. Computer Science</h3>
+        <p class="tl-org">Taibah University</p>
+      </div>
+    </div>
+
+    <div class="lang-row">
+      <span><strong>Arabic</strong> — Native</span>
+      <span><strong>English</strong> — Advanced</span>
+    </div>
+  </section>
+
+  <footer class="contact frame" id="contact">
+    <span class="corner tl" aria-hidden="true"></span>
+    <span class="corner tr" aria-hidden="true"></span>
+    <span class="corner bl" aria-hidden="true"></span>
+    <span class="corner br" aria-hidden="true"></span>
+
+    <p class="eyebrow-mono">// 05 — OPEN CHANNEL</p>
+    <h2 class="section-title">Let's build something</h2>
+    <p class="section-sub">Have a project that needs a programmer, or a prototype that needs to feel right? I'm open to freelance contracts and full-time roles.</p>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <h4>Email</h4>
+        <a href="mailto:wedad.salem@proton.me">wedad.salem@proton.me</a>
+      </div>
+      <div class="contact-item">
+        <h4>Phone</h4>
+        <a href="tel:+966532459723">+966 53 245 9723</a>
+      </div>
+      <div class="contact-item">
+        <h4>LinkedIn</h4>
+        <a href="#" id="linkedin-link">Add your profile URL</a>
+      </div>
+      <div class="contact-item">
+        <h4>GitHub</h4>
+        <a href="#" id="github-link">Add your profile URL</a>
+      </div>
+      <div class="contact-item">
+        <h4>Location</h4>
+        <span>Saudi Arabia</span>
+      </div>
+    </div>
+
+    <div class="foot-note">
+      <span>© 2026 WEDAD SALEM</span>
+      <span>BUILD v2026.1 — UNITY / C#</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll-reveal for timeline, loadout, and project entries
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const items = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
         }
-
-        //add Lineup tag for the entity
-        AddComponent(entity, new Lineup());
-
-        DependsOn(authoring.coordinatesGridConfigration);
-    }
-}</pre></td></tr></tbody></table></td></tr></tbody></table><p></p><p>For the grid data, I created <code>IComponentData</code> containing grid and game data after that I bake the data, and then I read about <code>IAspect</code> and how it provides a streamlined approach to accessing and modifying data, resulting in improved performance and faster execution times. so I try to use it to get the grid and game data from it.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="51236f37-3bf3-40c8-993e-79b8c0a51007" data-macro-parameters="title=GameProperties.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1HYW1lUHJvcGVydGllcy5jc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="2e48a182-0a05-4c18-9b61-8ad533991d8e" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public struct GameProperties : IComponentData
-{
-
-    public int xGridCount;
-    public int zGridCount;
-    public float baseOffset;
-    public float xPadding;
-    public float zPadding;
-    public Entity gridPrefab;
-
-    //-----------------
-
-    public float3 teamBlueUnitPostion;
-    public float3 teamRedUnitPostion;
-    public Entity teamBlueUnitPrefab;
-    public Entity teamRedUnitPrefab;
-
-}</pre></td></tr></tbody></table></td></tr></tbody></table><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="a3f88399-7f17-48c0-948f-5411b32a7221" data-macro-parameters="title=GameDataMono.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1HYW1lRGF0YU1vbm8uY3N9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="fb41550b-6578-4025-9cde-f9d0a04bce6e" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public class GameDataMono : MonoBehaviour
-{
-    public float3 teamBlueUnitPostion;
-    public float3 teamRedUnitPostion;
-    public GameObject teamBlueUnitPrefab;
-    public GameObject teamRedUnitPrefab;
-
-    //---------------------------------
-
-    public int xGridCount;
-    public int zGridCount;
-    public float baseOffset;
-    public float xPadding;
-    public float zPadding;
-    public GameObject gridPrefab;
-}
-
-public class GameDataBaker : Baker&lt;GameDataMono&gt;
-{
-    public override void Bake(GameDataMono authoring)
-    {
-        var e = GetEntity(authoring, TransformUsageFlags.NonUniformScale | TransformUsageFlags.Dynamic);
-
-
-        AddComponent(e, new GameProperties
-        {
-            xGridCount = authoring.xGridCount,
-            zGridCount = authoring.zGridCount,
-            baseOffset = authoring.baseOffset,
-            xPadding = authoring.xPadding,
-            zPadding = authoring.zPadding,
-            gridPrefab = GetEntity(authoring.gridPrefab, TransformUsageFlags.Dynamic),
-
-
-            teamBlueUnitPostion = authoring.teamBlueUnitPostion,
-            teamRedUnitPostion = authoring.teamRedUnitPostion,
-            teamBlueUnitPrefab = GetEntity(authoring.teamBlueUnitPrefab, TransformUsageFlags.Dynamic),
-            teamRedUnitPrefab = GetEntity(authoring.teamRedUnitPrefab, TransformUsageFlags.Dynamic)
-        });
-    }
-}</pre></td></tr></tbody></table></td></tr></tbody></table><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="269f88a7-9c18-41e4-b569-c7f9e81533e8" data-macro-parameters="title=GameDataAspect.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1HYW1lRGF0YUFzcGVjdC5jc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="39adbd22-c933-415d-bf7c-e210fa46c946" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public readonly partial struct GameDataAspect : IAspect
-{
-    private readonly RefRW&lt;GameProperties&gt; _gridProperties;
-
-    public float3 teamBlueUnitPostion =&gt; _gridProperties.ValueRO.teamBlueUnitPostion;
-    public float3 teamRedUnitPostion =&gt; _gridProperties.ValueRO.teamRedUnitPostion;
-
-    public Entity teamBlueUnitPrefab =&gt; _gridProperties.ValueRO.teamBlueUnitPrefab;
-    public Entity teamRedUnitPrefab =&gt; _gridProperties.ValueRO.teamRedUnitPrefab;
-
-
-
-    public int xGridCount =&gt; _gridProperties.ValueRO.xGridCount;
-    public int zGridCount =&gt; _gridProperties.ValueRO.zGridCount;
-    public float xPadding =&gt; _gridProperties.ValueRO.xPadding;
-    public float zPadding =&gt; _gridProperties.ValueRO.zPadding;
-    public float baseOffset =&gt; _gridProperties.ValueRO.baseOffset;
-    public Entity gridPrefab =&gt; _gridProperties.ValueRO.gridPrefab;
-
-
-    public LocalTransform GetteamBlueSpawnPoint()
-    {
-        var position = _gridProperties.ValueRW.teamBlueUnitPostion;
-        return new LocalTransform
-        {
-            Position = position,
-            Rotation = quaternion.identity,
-            Scale = 1f
-        };
-    }
-    public LocalTransform GetteamRedSpawnPoint()
-    {
-        var position = _gridProperties.ValueRW.teamRedUnitPostion;
-        return new LocalTransform
-        {
-            Position = position,
-            Rotation = quaternion.identity,
-            Scale = 1f
-        };
-    }
-}</pre></td></tr></tbody></table></td></tr></tbody></table><p></p><p>And the final script is the system that contains all previous data together and uses it as spawning units.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="37d28ca7-45ef-4c4f-9967-39ee4e5b34c5" data-macro-parameters="title=SpawnSystem.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1TcGF3blN5c3RlbS5jc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="98b0c592-cbdc-4ba6-a1db-01b510c04680" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public partial class SpawnSystem : SystemBase
-{
-    private EntityManager entityManager;
-    private Entity unitEntity;
-    private Entity EntityCorrdinates;
-    public bool isChange = false;
-    public int lineupIndex = 0;
-    public List&lt;Entity&gt; Lineups = new List&lt;Entity&gt;();
-
-    [BurstCompile]
-    protected override void OnUpdate()
-    {
-
-        if (LevelManager.Instance.StartTheLevel)
-        {
-            entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-            Lineups = new List&lt;Entity&gt;();
-            lineupIndex = 0;
-
-            Entities
-            .WithAll&lt;GameProperties&gt;()
-            .ForEach(
-            (Entity entity) =&gt;
-            {
-                unitEntity = entity;
-            }
-            )
-            .WithoutBurst()
-            .Run();
-
-            var unit = SystemAPI.GetAspect&lt;GameDataAspect&gt;(unitEntity);
-
-            //add lineups to the list
-            Entities
-            .WithAll&lt;Lineup&gt;()
-            .ForEach(
-            (Entity entity) =&gt;
-            {
-                Lineups.Add(entity);
-            }
-            )
-            .WithoutBurst()
-            .Run();
-
-            isChange = true;
-
-            //spawn red team on game start
-            SpawnRedTeam();
-            LevelManager.Instance.StartTheLevel = false;
-        }
-
-        if (isChange)
-        {
-            EntityCorrdinates = Lineups[lineupIndex];
-            var ecb = new EntityCommandBuffer(Allocator.Temp);
-            var unit = SystemAPI.GetAspect&lt;GameDataAspect&gt;(unitEntity);
-
-            //when choose another lineup previous units will destroy
-            Entities
-            .WithAll&lt;DestroyTag&gt;()
-            .ForEach(
-            (Entity entity) =&gt;
-            {
-                ecb.DestroyEntity(entity);
-
-            }
-            )
-            .WithoutBurst()
-            .Run();
-            ecb.Playback(entityManager);
-
-            //spawn blue team
-            SpawnBlueTeam();
-
-            isChange = false;
-        }
-    }
-    public void SpawnRedTeam()
-    {
-
-        var ecb = new EntityCommandBuffer(Allocator.Temp);
-        var unit = SystemAPI.GetAspect&lt;GameDataAspect&gt;(unitEntity);
-
-        //random lineup for red team
-        int randomNum;
-        var random = new Random((uint)UnityEngine.Random.Range(0, 100000));
-        randomNum = random.NextInt(0, Lineups.Count);
-
-        var gridType = entityManager.GetBuffer&lt;CoordinatesGridBuffer&gt;(Lineups[randomNum]);
-
-
-        // Instantiate red team ------------------
-
-        for (int k = 0; k &lt; unit.xGridCount; k++)
-        {
-            for (int j = 0; j &lt; unit.zGridCount; j++)
-            {
-                var grid = ecb.Instantiate(unit.gridPrefab);
-                float3 GridPostion = new float3(k * unit.xPadding, unit.baseOffset, j * unit.zPadding);
-                ecb.SetComponent(grid, new LocalTransform { Position = GridPostion, Scale = 0.1f });
-                ecb.SetName(grid, "[" + k + "," + j + "]");
-                for (int i = 0; i &lt; gridType.Length; i++)
-                {
-                    if (k == gridType[i].axis.x &amp;&amp; j == gridType[i].axis.y)
-                    {
-                        var newUnit = ecb.Instantiate(unit.teamRedUnitPrefab);
-                        ecb.AddComponent&lt;Target&gt;(newUnit);
-                        ecb.AddComponent&lt;RedTeam&gt;(newUnit);
-                        float3 UnitPostion = new float3(k * unit.xPadding, unit.baseOffset + 1, j * unit.zPadding);
-                        ecb.SetComponent(newUnit, new LocalTransform { Position = UnitPostion, Scale = 1f });
-                        ecb.SetName(newUnit, "Red Unit [" + k + "," + j + "]");
-                    }
-                }
-            }
-        }
-        ecb.Playback(entityManager);
-
-
-    }
-    public void SpawnBlueTeam()
-    {
-
-        var unit = SystemAPI.GetAspect&lt;GameDataAspect&gt;(unitEntity);
-        var ecb = new EntityCommandBuffer(Allocator.Temp);
-        var gridType = entityManager.GetBuffer&lt;CoordinatesGridBuffer&gt;(EntityCorrdinates);
-
-        // Instantiate blue team ------------------
-
-        for (int k = 0; k &lt; unit.xGridCount; k++)
-        {
-            for (int j = 0; j &lt; unit.zGridCount; j++)
-            {
-                var grid = ecb.Instantiate(unit.gridPrefab);
-                ecb.AddComponent&lt;DestroyTag&gt;(grid);
-                float3 GridPostion = new float3(k * unit.xPadding, unit.baseOffset, j * unit.zPadding);
-                ecb.SetComponent(grid, new LocalTransform { Position = GridPostion + unit.GetteamBlueSpawnPoint().Position, Scale = 0.1f });
-                ecb.SetName(grid, "[" + k + "," + j + "]");
-                for (int i = 0; i &lt; gridType.Length; i++)
-                {
-                    if (k == gridType[i].axis.x &amp;&amp; j == gridType[i].axis.y)
-                    {
-                        var newUnit = ecb.Instantiate(unit.teamBlueUnitPrefab);
-                        ecb.AddComponent&lt;Target&gt;(newUnit);
-                        ecb.AddComponent&lt;BlueTeam&gt;(newUnit);
-                        ecb.AddComponent&lt;DestroyTag&gt;(newUnit);
-                        float3 UnitPostion = new float3(k * unit.xPadding, unit.baseOffset + 1, j * unit.zPadding);
-                        ecb.SetComponent(newUnit, new LocalTransform { Position = UnitPostion + unit.GetteamBlueSpawnPoint().Position, Scale = 1f });
-                        ecb.SetName(newUnit, "Blue Unit [" + k + "," + j + "]");
-                    }
-                }
-            }
-        }
-        ecb.Playback(entityManager);
-    }
-}</pre></td></tr></tbody></table></td></tr></tbody></table><p></p><p><strong>Definition of Each Team:</strong> The team list is populated by including all units and assigning them the appropriate team tag. This ensures that every unit is associated with either the <span style="color: rgb(76,154,255);">BlueTeam</span> or <span style="color: rgb(255,86,48);">RedTeam </span>in the team list. when the buttle start I run this code one time.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="5ca02372-3190-4210-ae2c-13e0ab722cb1" data-macro-parameters="title=AssignTargetSystem.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Bc3NpZ25UYXJnZXRTeXN0ZW0uY3N9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="d0070f70-f35b-4361-8391-4c54297abcea" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>// add each teams to list ------
-            if (StartButtel)
-            {
-
-                Entities
-                .WithAll&lt;RedTeam&gt;()
-                .ForEach(
-                (Entity entity, ref LocalTransform localTransform) =&gt;
-                {
-                    redTeam.Add(entity);
-                    OnSpawn?.Invoke(localTransform.Position, entity);
-
-                }
-                )
-                .WithoutBurst()
-                .Run();
-
-
-                Entities
-                .WithAll&lt;BlueTeam&gt;()
-                .ForEach(
-                    (Entity entity, ref LocalTransform localTransform) =&gt;
-                    {
-                        blueTeam.Add(entity);
-                        OnSpawn?.Invoke(localTransform.Position, entity);
-                    }
-                )
-                .WithoutBurst()
-                .Run();
-
-                StartButtel = false;
-            }
-            //------------</pre></td></tr></tbody></table></td></tr></tbody></table><h3>Find Target</h3><p>After spawning, each unit searches for a target by adding an entity value. If the target is destroyed, it will be randomly replaced with a new entity. also when the target die will enter this code aging and find another target.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="ce41895a-7087-4134-a0c8-dc731081d2f0" data-macro-parameters="title=AssignTargetSystem.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Bc3NpZ25UYXJnZXRTeXN0ZW0uY3N9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="aa6747d6-cdf2-45a8-a304-45187f513043" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>//check if unit found targert foreach teams -----
-
-            Entities
-            .WithAll&lt;RedTeam&gt;()
-            .ForEach((Entity entity, ref LocalTransform localTransform, ref Target Target) =&gt;
-            {
-                if (blueTeam.Count &gt; 0 &amp;&amp; Target.targetEntity == Entity.Null &amp;&amp; !entityManager.HasComponent&lt;EntityDestroy&gt;(Target.targetEntity))
-                {
-                    var random = new Unity.Mathematics.Random((uint)UnityEngine.Random.Range(0, 100000));
-                    int rand = random.NextInt(0, blueTeam.Count);
-                    if (!entityManager.HasComponent&lt;EntityDestroy&gt;(blueTeam[rand]))
-                    {
-                        Target.targetEntity = blueTeam[rand];
-                        ecb.SetComponent(entity, new Target { targetEntity = blueTeam[rand] });
-                    }
-                }
-            }
-            )
-            .WithoutBurst()
-            .Run();
-
-
-            Entities
-            .WithAll&lt;BlueTeam&gt;()
-            .ForEach((Entity entity, ref LocalTransform localTransform, ref Target target) =&gt;
-                {
-
-                    if (!entityManager.HasComponent&lt;EntityDestroy&gt;(target.targetEntity) &amp;&amp; redTeam.Count &gt; 0 &amp;&amp; target.targetEntity == Entity.Null)
-                    {
-                        var random = new Unity.Mathematics.Random((uint)UnityEngine.Random.Range(0, 100000));
-                        int rand = random.NextInt(0, redTeam.Count);
-                        if (!entityManager.HasComponent&lt;EntityDestroy&gt;(redTeam[rand]))
-                        {
-                            target.targetEntity = redTeam[rand];
-                            ecb.SetComponent(entity, new Target { targetEntity = redTeam[rand] });
-                        }
-                    }
-
-                }
-            )
-            .WithoutBurst()
-            .Run();
-
-            //----------
-
-            ecb.Playback(entityManager);</pre></td></tr></tbody></table></td></tr></tbody></table><h3>Teams Configuration File </h3><p>For each team, a configuration file containing their properties.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="346c4c14-2660-420c-ab62-4f4431627c1d" data-macro-parameters="title=UnitConfiguration.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Vbml0Q29uZmlndXJhdGlvbi5jc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="5e16d99b-4780-4d21-bb3e-4a68058d5277" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>[CreateAssetMenu(fileName = "TeamUnitsData",
- menuName = "Scriptable Object/Team Units Data",
-  order = 0)]
-
-public class UnitConfiguration : ScriptableObject
-{
-
-    public float HP;
-    public float AttackDamage;
-    public float InitialAttackSpeed;
-    public float AttackRange;
-    public float MovementSpeed;
-
-    // This is a util method use for baking process.
-    public void ConvertToUnManaged(ref UnitProperties data, ref Health hp)
-    {
-        hp.HP = HP;
-        data.AttackDamage = AttackDamage;
-        data.InitialAttackSpeed = InitialAttackSpeed;
-        data.AttackRange = AttackRange;
-        data.MovementSpeed = MovementSpeed;
-    }
-}
-</pre></td></tr></tbody></table></td></tr></tbody></table><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="e41e4518-32bb-4b45-a843-c1acf1430528" data-macro-parameters="title=UnitProperties.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Vbml0UHJvcGVydGllcy5jc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="ac732025-401e-4ffd-935e-3a1b9d08f5e2" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre> public struct UnitProperties : IComponentData
-{
-    public float AttackDamage;
-    public float InitialAttackSpeed;
-    public float UpdatedAttackSpeed;
-
-    public float AttackRange;
-    public float MovementSpeed;
-
-}
-
-public struct Health : IComponentData
-{
-    public float HP;
-
-}</pre></td></tr></tbody></table></td></tr></tbody></table><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="3d443f55-e51c-467e-8b80-b27dfb2ad765" data-macro-parameters="title=UnitConfigAuthoring.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Vbml0Q29uZmlnQXV0aG9yaW5nLmNzfQ&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="c2c03c84-d7fe-4e23-9473-ad1901e7487f" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public class UnitConfigAuthoring : MonoBehaviour
-{
-    [SerializeField]
-    private UnitConfiguration unitConfiguration;
-
-    private class UnitConfigBaker : Baker&lt;UnitConfigAuthoring&gt;
-    {
-        public override void Bake(UnitConfigAuthoring authoring)
-        {
-            var entity = GetEntity(TransformUsageFlags.None);
-            var playerConfiguration = new UnitProperties();
-            var playerConfigurationHP = new Health();
-
-
-            // we will use the method that we already create before to parsing data into the component
-            authoring.unitConfiguration.ConvertToUnManaged(ref playerConfiguration, ref playerConfigurationHP);
-
-
-            // Add configuration to entity
-
-            UnitProperties unitProperties = default;
-            Health helth = default;
-
-            helth.HP = authoring.unitConfiguration.HP;
-
-            unitProperties.AttackDamage = authoring.unitConfiguration.AttackDamage;
-            unitProperties.InitialAttackSpeed = authoring.unitConfiguration.InitialAttackSpeed;
-            unitProperties.AttackRange = authoring.unitConfiguration.AttackRange;
-            unitProperties.MovementSpeed = authoring.unitConfiguration.MovementSpeed;
-            AddComponent(entity, unitProperties);
-            AddComponent(entity, helth);
-
-            DependsOn(authoring.unitConfiguration);
-
-        }
-    }
-}</pre></td></tr></tbody></table></td></tr></tbody></table><h3>Movement and Attack</h3><p>If a unit has a target, it will move towards the target until it reaches the specified range. the attack will commence, resulting in a reduction of the target's HP by the unit's attack damage. The attack speed operates similarly to a damage delay loop.</p><p>If the target's HP reaches zero, several actions will be performed before destroying the entity. Firstly, the target entity will be saved, and then it will be set to <code>Entity.Null</code> Subsequently, the tag <code>EntityDestroy</code> will be added.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="38542809-130c-435e-80f8-f2c3b6c7a9dd" data-macro-parameters="title=MoveAndDamageSystem.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Nb3ZlQW5kRGFtYWdlU3lzdGVtLmNzfQ&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="64c35a1f-ea18-454f-8f33-2cc8cc9718fe" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public partial class MoveAndDamageSystem : SystemBase
-{
-    //for UI display
-    public Action&lt;float, float3, Entity&gt; OnDealDamage;
-    public Action&lt;float3, Entity&gt; OnMove;
-
-    [BurstCompile]
-    protected override void OnUpdate()
-    {
-
-        if (UI.Instance.startGame)
-        {
-
-            EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
-
-
-            //blue team -------------
-
-            Entities
-            .WithAll&lt;BlueTeam&gt;()
-            .WithNone&lt;EntityDestroy&gt;()
-            .ForEach((Entity entity, ref Target Target, ref LocalTransform localTransform, ref UnitProperties blueTeamUnitProperties, ref Health blueTeamHealthProperties) =&gt;
-                {
-
-                    //movement function -------
-
-                    if (Target.targetEntity != Entity.Null)
-                    {
-                        LocalTransform trgetTransform = World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentData&lt;LocalTransform&gt;(Target.targetEntity);
-                        var dist = math.distance(trgetTransform.Position, localTransform.Position);
-
-                        if (dist &gt; blueTeamUnitProperties.AttackRange)
-                        {
-                            if (trgetTransform.Position.x &gt; localTransform.Position.x)
-                            {
-                                localTransform.Position.x += blueTeamUnitProperties.MovementSpeed * SystemAPI.Time.DeltaTime;
-                            }
-                            else
-                            {
-                                localTransform.Position.x -= blueTeamUnitProperties.MovementSpeed * SystemAPI.Time.DeltaTime;
-                            }
-
-                            if (trgetTransform.Position.z &gt; localTransform.Position.z)
-                            {
-                                localTransform.Position.z += blueTeamUnitProperties.MovementSpeed * SystemAPI.Time.DeltaTime;
-                            }
-                            else
-                            {
-                                localTransform.Position.z -= blueTeamUnitProperties.MovementSpeed * SystemAPI.Time.DeltaTime;
-                            }
-
-                            OnMove?.Invoke(localTransform.Position, entity);
-
-                        }
-                        else
-                        {
-                            //Attack function -----
-
-                            var tagetHp = World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentData&lt;Health&gt;(Target.targetEntity);
-                            var tagetPostion = World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentData&lt;LocalTransform&gt;(Target.targetEntity);
-
-                            if (tagetHp.HP &gt; 0)
-                            {
-                                if (blueTeamUnitProperties.UpdatedAttackSpeed &gt;= 0)
-                                {
-                                    blueTeamUnitProperties.UpdatedAttackSpeed -= SystemAPI.Time.DeltaTime;
-                                }
-                                else
-                                {
-                                    float hp = tagetHp.HP - blueTeamUnitProperties.AttackDamage;
-                                    Debug.Log(Target.targetEntity + " have health: " + hp);
-                                    ecb.SetComponent(Target.targetEntity, new Health { HP = hp });
-                                    blueTeamUnitProperties.UpdatedAttackSpeed = blueTeamUnitProperties.InitialAttackSpeed;
-                                    OnDealDamage?.Invoke(hp, tagetPostion.Position, Target.targetEntity);
-
-                                }
-                            }
-                            else
-                            {
-                                //before add EntityDestroy tag find to the entity new target ----
-
-                                if (Target.targetEntity != Entity.Null)
-                                {
-                                    var tt = Target.targetEntity;
-                                    Target.targetEntity = Entity.Null;
-                                    ecb.AddComponent&lt;EntityDestroy&gt;(tt);
-                                }
-                            }
-
-                        }
-                    }
-                })
-                .WithoutBurst()
-                .Run();
-
-
-
-            //red team ------------
-
-            Entities
-            .WithAll&lt;RedTeam&gt;()
-            .WithNone&lt;EntityDestroy&gt;()
-            .ForEach((Entity entity, ref Target Target, ref LocalTransform localTransform, ref UnitProperties redTeamUnitProperties, ref Health health) =&gt;
-               {
-                   if (Target.targetEntity != Entity.Null)
-                   {
-                       LocalTransform trgetTransform = World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentData&lt;LocalTransform&gt;(Target.targetEntity);
-
-                       var dist = math.distance(trgetTransform.Position, localTransform.Position); // distance
-                       if (dist &gt; redTeamUnitProperties.AttackRange) // moving every axis seperatly to the target , depending on the Attack range ,snipping it
-                       {
-                           if (trgetTransform.Position.x &gt; localTransform.Position.x)
-                           {
-                               localTransform.Position.x += redTeamUnitProperties.MovementSpeed * SystemAPI.Time.DeltaTime;
-                           }
-                           else
-                           {
-                               localTransform.Position.x -= redTeamUnitProperties.MovementSpeed * SystemAPI.Time.DeltaTime;
-                           }
-
-                           if (trgetTransform.Position.z &gt; localTransform.Position.z)
-                           {
-                               localTransform.Position.z += redTeamUnitProperties.MovementSpeed * SystemAPI.Time.DeltaTime;
-                           }
-                           else
-                           {
-                               localTransform.Position.z -= redTeamUnitProperties.MovementSpeed * SystemAPI.Time.DeltaTime;
-                           }
-
-                           OnMove?.Invoke(localTransform.Position, entity);
-
-                       }
-                       else
-                       {
-                           var tagetHp = World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentData&lt;Health&gt;(Target.targetEntity);
-                           var tagetPostion = World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentData&lt;LocalTransform&gt;(Target.targetEntity);
-
-
-                           if (tagetHp.HP &gt; 0)
-                           {
-                               if (redTeamUnitProperties.UpdatedAttackSpeed &gt;= 0)
-                               {
-                                   redTeamUnitProperties.UpdatedAttackSpeed -= SystemAPI.Time.DeltaTime;
-                               }
-                               else
-                               {
-                                   float hp = tagetHp.HP - redTeamUnitProperties.AttackDamage;
-                                   OnDealDamage?.Invoke(hp, tagetPostion.Position, Target.targetEntity);
-
-
-                                   Debug.Log(Target.targetEntity + " have health: " + hp);
-                                   ecb.SetComponent(Target.targetEntity, new Health { HP = hp });
-                                   redTeamUnitProperties.UpdatedAttackSpeed = redTeamUnitProperties.InitialAttackSpeed;
-                               }
-                           }
-                           else
-                           {
-                               if (Target.targetEntity != Entity.Null)
-                               {
-                                   var tt = Target.targetEntity;
-                                   Target.targetEntity = Entity.Null;
-                                   ecb.AddComponent&lt;EntityDestroy&gt;(tt);
-                               }
-                           }
-                       }
-                   }
-               }
-           )
-           .WithoutBurst()
-           .Run();
-
-            ecb.Playback(World.DefaultGameObjectInjectionWorld.EntityManager);
-        }
-
-    }
-
-}</pre></td></tr></tbody></table></td></tr></tbody></table><h3>Destroy Target</h3><p>Identify all entities that possess the <code>EntityDestroy</code> tag, will remove them from the team list, and subsequently proceed with their destruction.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="3897f6a4-772b-436a-b699-f2e7e90287d8" data-macro-parameters="title=AssignTargetSystem.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Bc3NpZ25UYXJnZXRTeXN0ZW0uY3N9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="7190a9d8-c8aa-453b-89ec-be9915c86831" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre> // destroy unit if has EntityDestroy
-            Entities
-            .WithAll&lt;EntityDestroy&gt;()
-            .WithAll&lt;BlueTeam&gt;()
-            .ForEach((Entity entity) =&gt;
-               {
-                   blueTeam.Remove(entity);
-                   ecb.DestroyEntity(entity);
-               }
-            )
-            .WithoutBurst()
-            .Run();
-
-            Entities
-           .WithAll&lt;EntityDestroy&gt;()
-           .WithAll&lt;RedTeam&gt;()
-           .ForEach((Entity entity) =&gt;
-               {
-                   redTeam.Remove(entity);
-                   ecb.DestroyEntity(entity);
-               }
-           )
-           .WithoutBurst()
-           .Run();
-
-            //--------------</pre></td></tr></tbody></table></td></tr></tbody></table><h3>Display to UI</h3><p><strong>Health: </strong>for health, I use World Space Canvas and I use Action. first, I call to action to spawn the text in <code>AssignTargetSystem.cs</code> <code>public Action&lt;float3, Entity&gt; OnSpawn;</code> and I invoke it when the game starts and the player chooses their lineup. To detect the increase and decrees and position for the health text, I add <code>public Action&lt;float, float3, Entity&gt; OnDealDamage;</code> and <code>public Action&lt;float3, Entity&gt; OnMove;</code> in script <code>MoveAndDamageSystem.cs</code></p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="cf96e01c-59d9-48fa-af25-a6ebf0801f54" data-macro-parameters="title=WorldSpaceUIController.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1Xb3JsZFNwYWNlVUlDb250cm9sbGVyLmNzfQ&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="d8767063-3677-48af-be78-742631240688" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre> public class WorldSpaceUIController : MonoBehaviour
-{
-    [SerializeField] private GameObject _damageIconPrefab;
-    [SerializeField] private List&lt;TMP_Text&gt; textList = new List&lt;TMP_Text&gt;();
-    private Transform _mainCameraTransform;
-    private EntityManager entityManager;
-
-    private void Start()
-    {
-        entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        _mainCameraTransform = Camera.main.transform;
-    }
-
-    private void OnEnable()
-    {
-        var dealDamageSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged&lt;MoveAndDamageSystem&gt;();
-        var spawnSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged&lt;AssignTargetSystem&gt;();
-
-        spawnSystem.OnSpawn += DisplayHP;
-
-        dealDamageSystem.OnDealDamage += DisplayDamageIcon;
-        dealDamageSystem.OnMove += Move;
-    }
-
-    private void OnDisable()
-    {
-        if (World.DefaultGameObjectInjectionWorld == null) return;
-        var dealDamageSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged&lt;MoveAndDamageSystem&gt;();
-        var spawnSystem = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged&lt;AssignTargetSystem&gt;();
-
-        spawnSystem.OnSpawn -= DisplayHP;
-
-        dealDamageSystem.OnDealDamage -= DisplayDamageIcon;
-        dealDamageSystem.OnMove -= Move;
-    }
-
-    private void DisplayDamageIcon(float damageAmount, float3 startPosition, Entity entity)
-    {
-        foreach (TMP_Text text in textList)
-        {
-            if (entityManager.GetName(entity) == text.gameObject.name)
-            {
-                text.text = $"&lt;color=black&gt;{damageAmount.ToString()}&lt;/color&gt;";
-                
-                //if the health rach 0 make the text empty
-                if (damageAmount &lt;= 0)
-                {
-                    text.text = "";
-                }
-            }
-        }
-    }
-
-    private void DisplayHP(float3 startPosition, Entity entity)
-    {
-        var directionToCamera = (Vector3)startPosition - _mainCameraTransform.position;
-        var rotationToCamera = Quaternion.LookRotation(directionToCamera, Vector3.up);
-        var newIcon = Instantiate(_damageIconPrefab, new Vector3(startPosition.x, startPosition.y + 1.5f, startPosition.z), rotationToCamera, transform);
-        var newIconText = newIcon.GetComponent&lt;TextMeshProUGUI&gt;();
-        textList.Add(newIconText);
-        newIconText.name = entityManager.GetName(entity);
-        newIconText.text = $"&lt;color=black&gt;{100}&lt;/color&gt;";
-    }
-
-    private void Move(float3 Position, Entity entity)
-    {
-        foreach (TMP_Text text in textList)
-        {
-            if (entityManager.GetName(entity) == text.gameObject.name)
-            {
-                text.transform.position = new Vector3(Position.x, Position.y + 1.5f, Position.z);
-            }
-        }
-    }
-}</pre></td></tr></tbody></table></td></tr></tbody></table><p></p><p><strong>Start Screen:</strong> for the start screen I added scroll buttons and each button has added a listener for the lineup index, to adjust many lineups I will explain this in the video.<br>and a start button that has a listener to start the game in this data.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="763b5ad9-00d8-47e3-aac1-85a4a8ecb8e0" data-macro-parameters="title=UI.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1VSS5jc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="2aa36dc5-c163-4367-8bdf-2842dcc3881c" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public class UI : MonoBehaviour
-{
-    [SerializeField] Button startButton;
-    public GameObject buttonPrefab;
-    public GameObject ScrollContent;
-    public bool startGame = false;
-    public int numbersOfLineups;
-    private static UI _instance;
-    public static UI Instance { get { return _instance; } }
-    private void Awake()
-    {
-        if (_instance != null &amp;&amp; _instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        startButton.onClick.AddListener(StartGame);
-
-        for (int i = 0; i &lt; numbersOfLineups; i++)
-        {
-            GameObject buttonObject = Instantiate(buttonPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-            buttonObject.transform.parent = ScrollContent.transform;
-            buttonObject.transform.position = new Vector3(0, 0, 0);
-            buttonObject.transform.localScale = ScrollContent.transform.localScale;
-            buttonObject.GetComponentInChildren&lt;TMP_Text&gt;().text = "Team " + (i + 1);
-            int cachedIndex = i;
-            Button button = buttonObject.GetComponent&lt;Button&gt;();
-
-            button.onClick.AddListener(delegate { ChooseLineup(cachedIndex); });
-        }
-
-    }
-
-    void ChooseLineup(int _index)
-    {
-        Debug.Log("" + _index);
-        var dealDamageSystem33 = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged&lt;SpawnSystem&gt;();
-        dealDamageSystem33.isChange = true;
-        dealDamageSystem33.lineupIndex = _index;
-
-    }
-    void StartGame()
-    {
-        startGame = true;
-        Debug.Log(startGame);
-        startButton.gameObject.SetActive(false);
-    }
-
-}</pre></td></tr></tbody></table></td></tr></tbody></table><p></p><p><strong>End Screen &amp; Reload Scene: </strong>In the end screen, I created a <code>LevelManager.cs</code>  that loading a subscene when reloading.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="7156ebc1-b9f5-4d5c-86a7-c063a738e4b3" data-macro-parameters="title=LevelManager.cs" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1MZXZlbE1hbmFnZXIuY3N9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="214b61a5-d592-414b-8b15-a47566057d80" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public class LevelManager : MonoBehaviour
-{
-    public SubScene subScenes;
-    public bool StartTheLevel = false;
-    Entity SceneEntity;
-    bool endLoad;
-
-    public static LevelManager Instance { get; private set; }
-    private void Awake()
-    {
-        Instance = this;
-        DontDestroyOnLoad(this);
-    }
-    void Start()
-    {
-        SceneEntity = SceneSystem.GetSceneEntity(World.DefaultGameObjectInjectionWorld.Unmanaged, subScenes.SceneGUID);
-        endLoad = false;
-    }
-    void Update()
-    {
-        if (SceneSystem.IsSceneLoaded(World.DefaultGameObjectInjectionWorld.Unmanaged, SceneEntity) &amp;&amp; !endLoad)
-        {
-            StartTheLevel = true;
-            Debug.Log("the subscene loaded");
-            endLoad = true;
-        }
-    }
-    public void RestartGame()
-    {
-        var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        entityManager.DestroyEntity(entityManager.UniversalQuery);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-    }
-}</pre></td></tr></tbody></table></td></tr></tbody></table><p></p><p><a href="https://youtu.be/WN8-BFGJ8NA" data-card-appearance="block">https://youtu.be/WN8-BFGJ8NA</a><a href="https://youtu.be/E1-fTTuxCIU" data-card-appearance="block">https://youtu.be/E1-fTTuxCIU</a></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><h1>Cows &amp; Bulls - Guessing Number Game</h1><p></p><ac:adf-fragment-mark><ac:adf-fragment-mark-detail name="Table 1" local-id="94be29a4-e94b-48ae-add9-e213a20d2cf6"></ac:adf-fragment-mark-detail></ac:adf-fragment-mark><table data-table-width="760" data-layout="default" data-local-id="7032a399-5bef-44ea-95d7-eda3c1357a29" class="confluenceTable"><tbody><tr><th class="confluenceTh"><h2>About</h2><p>Cows and Bulls challenge players to decipher a hidden number through deductive reasoning and logical thinking. By strategically using clues in the form of "cows" and "bulls," players must guess the correct number. The game provides an immersive and challenging experience that encourages critical thinking and vocabulary enhancement.</p></th><th data-highlight-colour="#ffffff" class="confluenceTh"><h2>Project Info</h2><p>Role: Game Programmer</p><p>Team Size: 2</p><p>Time frame: 3 months</p><p>Engine: Unity (C#)</p><a href="https://testflight.apple.com/join/tuArAIYk"><img class="confluence-embedded-image image-center" alt="testflight-2023-05-19.png" width="128" loading="lazy" src="./View Source_files/testflight-2023-05-19.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/testflight-2023-05-19.png?version=1&amp;modificationDate=1717523571723&amp;cacheVersion=1&amp;api=v2" data-height="512" data-width="512" data-unresolved-comment-count="0" data-linked-resource-id="44630024" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="testflight-2023-05-19.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="6b722769-1a0e-4e2f-a349-b16317a3f197" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; testflight-2023-05-19.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; testflight-2023-05-19.png" data-image-height="512" data-image-width="512"></a></th></tr></tbody></table><img class="confluence-embedded-image image-center" alt="f11805456d9f3d08.png" width="304" loading="lazy" src="./View Source_files/f11805456d9f3d08.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/f11805456d9f3d08.png?version=1&amp;modificationDate=1717523571741&amp;cacheVersion=1&amp;api=v2" data-height="559" data-width="559" data-unresolved-comment-count="0" data-linked-resource-id="44630030" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="f11805456d9f3d08.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="a74a3858-c936-498e-896b-992befa3af5e" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; f11805456d9f3d08.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; f11805456d9f3d08.png" data-image-height="1280" data-image-width="1280"><h2>Introduction:</h2><p>Cows and Bulls is a captivating word-guessing game that I developed as a personal project, showcasing my skills in game development, and design. Cows and Bulls offers a fun and intellectually stimulating gameplay experience. The primary objective of the project stemmed from my friend's passion for the game and their request for me to develop it. In this project, I aimed to create a unique approach for displaying cows and bulls results. I came up with the idea of using an invoice machine to showcase the outcomes. I envisioned the invoice machine printing the cows and bulls results, and to my delight, it worked successfully.</p><h2>Main Mechanics:</h2><p>The game relies on generating four numbers within the range of 0 to 9, The numbers should have unique digits, meaning each digit should be different from the other.</p><p>To determine whether there is a cow or a bull, I require knowledge of the number's position. A cow indicates that the number is present among the hidden numbers, but its location is incorrect. On the other hand, a bull signifies that the number is both correct and in the correct position.</p><p></p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="886d1c02-5250-4948-bfb3-3efa9e9f7511" data-macro-parameters="title=code - Generate a Secret Numbers" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1jb2RlIC0gR2VuZXJhdGUgYSBTZWNyZXQgTnVtYmVyc30&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="4fc54228-5020-4671-aa8b-6f624af297c0" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>//cows &amp; bulls genarate random numbers
-public void randomNumbers()
-{
-    for (int j = 0; j &lt; Lenght; j++)
-    {
-        Rand = Random.Range(0, 9); // give a random numbers
-        while (list.Contains(Rand)) // check if the list have the number
-        {
-            Rand = Random.Range(0, 9); //if have it change to another
-        }
-        list.Add(Rand); //add to the list
-        Debug.Log(list[j]);
-
-    }
-}</pre></td></tr></tbody></table></td></tr></tbody></table><p></p><p></p><p></p><p></p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="d33fae95-cb73-448b-b8a9-55a7c8600f3e" data-macro-parameters="title=code - Check Cows and Bulls" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1jb2RlIC0gQ2hlY2sgQ293cyBhbmQgQnVsbHN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="f0f8130a-5af0-464e-82df-5292c9310132" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>//how many cows and bulls
- for (int x = 0; x &lt; Lenght; x++)
- {
-     if (list[x] == System.Convert.ToInt32(keyboard.input[x].text))
-     {
-         bulls++;
-     }
-     else if (list.Contains(System.Convert.ToInt32(keyboard.input[x].text)))
-     {
-         cows++;
-     }
- }</pre></td></tr></tbody></table></td></tr></tbody></table><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><h2>High Score API:</h2><table data-table-width="760" data-layout="default" data-local-id="4f6386e8-a872-461d-88be-6ef6fae218de" class="confluenceTable"><tbody><tr><td class="confluenceTd"><img class="confluence-embedded-image image-center" alt="Screenshot 2024-01-27 220254.png" width="258" loading="lazy" src="./View Source_files/Screenshot 2024-01-27 220254.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/Screenshot%202024-01-27%20220254.png?version=1&amp;modificationDate=1717523571747&amp;cacheVersion=1&amp;api=v2" data-height="906" data-width="511" data-unresolved-comment-count="0" data-linked-resource-id="44630036" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2024-01-27 220254.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="9eadb323-c51a-4298-8e42-9b6eee4422a4" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-27 220254.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-27 220254.png" data-image-height="1208" data-image-width="681"><p></p></td><td class="confluenceTd"><p><img class="confluence-embedded-image image-center" alt="Screenshot 2024-01-27 220106.png" width="256" loading="lazy" src="./View Source_files/Screenshot 2024-01-27 220106.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/Screenshot%202024-01-27%20220106.png?version=1&amp;modificationDate=1717523571753&amp;cacheVersion=1&amp;api=v2" data-height="907" data-width="509" data-unresolved-comment-count="0" data-linked-resource-id="44630042" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2024-01-27 220106.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="b8d7394d-6143-419e-9138-481e421b2f7a" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-27 220106.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-27 220106.png" data-image-height="1209" data-image-width="678"></p></td></tr></tbody></table><p><em>The end result of the UI, both for saving player name and displaying the high score list.</em></p><p></p><p>I utilized the PlayFab API to implement a feature where player names and their high-score data could be saved. Following the completion of the server setup, I incorporated a service manager into Unity, enabling the transmission of requests to the server. This functionality facilitated the storage of match-high scores and the presentation of a comparative list of top scores. Additionally, I added some details that allow players to select random names.</p><h2>Share The Result On Social Media:</h2><img class="confluence-embedded-image image-left" alt="photo_2024-01-27_22-12-28.jpg" width="284" loading="lazy" src="./View Source_files/photo_2024-01-27_22-12-28.jpg" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/photo_2024-01-27_22-12-28.jpg?version=1&amp;modificationDate=1717523571760&amp;cacheVersion=1&amp;api=v2" data-height="1115" data-width="800" data-unresolved-comment-count="0" data-linked-resource-id="44630048" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="photo_2024-01-27_22-12-28.jpg" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="1dc864f2-35dd-42a5-a590-7f2b8ffc1685" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; photo_2024-01-27_22-12-28.jpg" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; photo_2024-01-27_22-12-28.jpg" data-image-height="1115" data-image-width="800"><p>To enhance the game's interactivity, I Added a feature that enables players to share their results on social media platforms. To facilitate this, I devised a mechanism to capture the entire guessing process, including the results and the player's progress. By creating copies of all the results and combining them into a single camera view for screenshots, I enabled players to include their progress alongside a shared message when posting on social media.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="e7daec10-981d-4e1d-accd-9233f24591a5" data-macro-parameters="title=code - TakeScreenshotAndShare" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1jb2RlIC0gVGFrZVNjcmVlbnNob3RBbmRTaGFyZX0&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="ef99a65c-2917-4066-a97a-a20f9072f4bb" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>private IEnumerator TakeScreenshotAndShare()
-{
-    yield return new WaitForEndOfFrame();
-
-    // The Render Texture in RenderTexture.active is the one
-    // that will be read by ReadPixels.
-    var currentRT = RenderTexture.active;
-    RenderTexture.active = _camera.targetTexture;
-
-    // Render the camera's view.
-    _camera.Render();
-
-    Texture2D ss = new Texture2D(_camera.targetTexture.width, _camera.targetTexture.height, TextureFormat.RGB24, false);
-    ss.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
-    ss.Apply();
-
-    string filePath = Path.Combine(Application.temporaryCachePath, "shared img.png");
-    File.WriteAllBytes(filePath, ss.EncodeToPNG());
-
-    // To avoid memory leaks
-    Destroy(ss);
-
-    new NativeShare().AddFile(filePath)
-        .SetSubject("Cows &amp; Bulls").SetText(RandomText() + " #CowsAndBulls").SetUrl("https://discord.gg/zejRR9S6gs")
-        .SetCallback((result, shareTarget) =&gt; Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
-        .Share();
-
-    // Share on WhatsApp only, if installed (Android only)
-    //if( NativeShare.TargetExists( "com.whatsapp" ) )
-    //	new NativeShare().AddFile( filePath ).AddTarget( "com.whatsapp" ).Share();
-}</pre></td></tr></tbody></table></td></tr></tbody></table><h2>Some Datils:</h2><img class="confluence-embedded-image image-left" alt="Screenshot 2024-01-29 110840.png" width="304" loading="lazy" src="./View Source_files/Screenshot 2024-01-29 110840.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/Screenshot%202024-01-29%20110840.png?version=1&amp;modificationDate=1717523571765&amp;cacheVersion=1&amp;api=v2" data-height="390" data-width="448" data-unresolved-comment-count="0" data-linked-resource-id="44630054" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2024-01-29 110840.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="fcf8006e-c3b9-4811-b7c3-5fdf2807c1b4" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-29 110840.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-29 110840.png" data-image-height="520" data-image-width="597"><p></p><h1>Jaber Chem</h1><ac:adf-fragment-mark><ac:adf-fragment-mark-detail local-id="c85bf59c-225b-4e93-a614-4dbccd40ef13"></ac:adf-fragment-mark-detail></ac:adf-fragment-mark><table data-table-width="760" data-layout="default" data-local-id="67de08cf-1dce-40c4-9f3c-b33af37f3b4e" class="confluenceTable"><tbody><tr><th class="confluenceTh"><h2>About</h2><p>Jaber Chem is an interactive and educational game that aims to make the study of chemistry a fun and captivating experience for students. This game incorporates various engaging mini-games to enhance the learning process.</p></th><th data-highlight-colour="#ffffff" class="confluenceTh"><h2>Project Info</h2><p>Role: Game Programmer</p><p>Team Size: 8</p><p>Time frame: 2 week</p><p>Engine: Unity (C#)</p><p>Video:</p><a href="https://youtu.be/M_whzkhv1yM"><img class="confluence-embedded-image image-center" alt="free-youtube-logo-icon-2431-thumb.png" width="123" loading="lazy" src="./View Source_files/free-youtube-logo-icon-2431-thumb.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/free-youtube-logo-icon-2431-thumb.png?version=1&amp;modificationDate=1717523571786&amp;cacheVersion=1&amp;api=v2" data-height="512" data-width="512" data-unresolved-comment-count="0" data-linked-resource-id="44630060" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="free-youtube-logo-icon-2431-thumb.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="87b54b64-c351-4b18-b414-6666ee719d22" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; free-youtube-logo-icon-2431-thumb.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; free-youtube-logo-icon-2431-thumb.png" data-image-height="512" data-image-width="512"></a></th></tr></tbody></table><h2>Introduction:</h2><p>During my time at Gamfire, I devoted my efforts to a Jaber chem project that involved the creation of an Electron Configuration Game. This game drew inspiration from WarioWare, Inc.: Mega Microgames! 2003. My main focus throughout the project was to develop and successfully implement the game. </p><table data-table-width="760" data-layout="default" data-local-id="4d3a7cca-b58d-4edd-9fee-93d58cc86cfc" class="confluenceTable"><tbody><tr><td class="confluenceTd"><p><img class="confluence-embedded-image image-center" alt="Screenshot 2024-01-29 110729.png" width="357" loading="lazy" src="./View Source_files/Screenshot 2024-01-29 110729.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/Screenshot%202024-01-29%20110729.png?version=1&amp;modificationDate=1717523571792&amp;cacheVersion=1&amp;api=v2" data-height="971" data-width="1616" data-unresolved-comment-count="0" data-linked-resource-id="44630066" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2024-01-29 110729.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="347973c0-716e-4a14-8731-0e04e52208ad" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-29 110729.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-29 110729.png" data-image-height="769" data-image-width="1280"></p></td><td class="confluenceTd"><img class="confluence-embedded-image image-center" alt="unnamed.png" width="232" loading="lazy" src="./View Source_files/unnamed.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/unnamed.png?version=1&amp;modificationDate=1717523571799&amp;cacheVersion=1&amp;api=v2" data-height="300" data-width="300" data-unresolved-comment-count="0" data-linked-resource-id="44630072" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="unnamed.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="99da1b6e-93a9-4c2e-abe9-5c52c10798fd" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; unnamed.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; unnamed.png" data-image-height="300" data-image-width="300"><p></p></td></tr></tbody></table><h2>Number of electrons in each shell</h2><p>The number of electrons in each shell follows a pattern based on the quantum mechanical model of the atom. The maximum number of electrons that can occupy a particular shell is given by the formula 2<em>n</em><sup>2</sup>, where "<em>n</em>" represents the shell number.</p><p>Here's a summary of the number of electrons in each shell:</p><ul><li><p>Shell K (<em>n</em> = 1): Maximum 2 electrons</p></li><li><p>Shell L (<em>n</em> = 2): Maximum 8 electrons</p></li><li><p>Shell M (<em>n</em> = 3): Maximum 18 electrons</p></li><li><p>Shell N (<em>n</em> = 4): Maximum 32 electrons</p></li><li><p>Shell O (<em>n</em> = 5): Maximum 50 electrons</p></li><li><p>Shell P (<em>n</em> = 6): Maximum 72 electrons</p></li></ul><p>I devised a calculation to distribute electrons in a circular pattern. Considering that a complete circle consists of 360 degrees, I divided this value by the number of electrons in the shell. This allowed me to spawn an electron point for each segment determined by the calculation.</p><img class="confluence-embedded-image image-center" alt="White Blue Modern Pie Chart Graph.png" width="599" loading="lazy" src="./View Source_files/White Blue Modern Pie Chart Graph.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/White%20Blue%20Modern%20Pie%20Chart%20Graph.png?version=1&amp;modificationDate=1717523571806&amp;cacheVersion=1&amp;api=v2" data-height="576" data-width="768" data-unresolved-comment-count="0" data-linked-resource-id="44630078" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="White Blue Modern Pie Chart Graph.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="b916e2ad-04f1-467c-b82d-d2a3240acbe7" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; White Blue Modern Pie Chart Graph.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; White Blue Modern Pie Chart Graph.png" data-image-height="768" data-image-width="1024"><img class="confluence-embedded-image image-center" alt="image-20240128-051135.png" width="330" loading="lazy" src="./View Source_files/image-20240128-051135.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/image-20240128-051135.png?version=1&amp;modificationDate=1717523571813&amp;cacheVersion=1&amp;api=v2" data-height="978" data-width="1219" data-unresolved-comment-count="0" data-linked-resource-id="44630084" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240128-051135.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="9adf6f3d-7f33-46c1-8bda-6cb1f222acc8" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; image-20240128-051135.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; image-20240128-051135.png" data-image-height="978" data-image-width="1219"><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="6dee3c2a-551b-422f-b695-7bedd097ef8a" data-macro-parameters="title=code - Electrons Spawner" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1jb2RlIC0gRWxlY3Ryb25zIFNwYXduZXJ9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="11779623-84e1-44f1-95e1-925f62821b20" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public void Spawner()
- {
-     float Angle = 360.0f / electronNumbers;
-     float radius = 1.5f;
-
-     for (float i = 0; i &lt; 360; i+= Angle)
-     {
-         Vector2 spawnPosition;
-         
-         spawnPosition.x = (radius * Mathf.Cos(i * Mathf.Deg2Rad)) + midillAtom.position.x;
-         spawnPosition.y = (radius * Mathf.Sin(i * Mathf.Deg2Rad)) + midillAtom.position.y;
-
-         GameObject electronPostion = Instantiate(electronPrefab, spawnPosition, Quaternion.identity);
-         electronPostion.transform.SetParent(midillAtom);
-     }
- }</pre></td></tr></tbody></table></td></tr></tbody></table><h2>Orbital Notation:</h2><p>To represent the orbital notation, it is necessary to have knowledge of the principal energy level (shell), the specific subshell (s, p, d, f), and the maximum number of electrons that can occupy each subshell.</p><img class="confluence-embedded-image image-wrap-left" alt="7363e220-6f7b-4f90-94a3-a505b9a13a5c-1658749759354016.png" width="341" loading="lazy" src="./View Source_files/7363e220-6f7b-4f90-94a3-a505b9a13a5c-1658749759354016.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/7363e220-6f7b-4f90-94a3-a505b9a13a5c-1658749759354016.png?version=1&amp;modificationDate=1717523571820&amp;cacheVersion=1&amp;api=v2" data-height="506" data-width="940" data-unresolved-comment-count="0" data-linked-resource-id="44630090" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="7363e220-6f7b-4f90-94a3-a505b9a13a5c-1658749759354016.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="7ccd17e4-eca2-45b2-9b48-e957c15373da" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; 7363e220-6f7b-4f90-94a3-a505b9a13a5c-1658749759354016.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; 7363e220-6f7b-4f90-94a3-a505b9a13a5c-1658749759354016.png" data-image-height="506" data-image-width="940"><img class="confluence-embedded-image image-wrap-right" alt="1522190_569352_ans_4712394340c6455aa553633fcd6789dc.jpeg" width="371" loading="lazy" src="./View Source_files/1522190_569352_ans_4712394340c6455aa553633fcd6789dc.jpeg" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/1522190_569352_ans_4712394340c6455aa553633fcd6789dc.jpeg?version=1&amp;modificationDate=1717523571827&amp;cacheVersion=1&amp;api=v2" data-height="165" data-width="459" data-unresolved-comment-count="0" data-linked-resource-id="44630096" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="1522190_569352_ans_4712394340c6455aa553633fcd6789dc.jpeg" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="2af51c1b-a36b-455d-ac9c-75c43cb16aab" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; 1522190_569352_ans_4712394340c6455aa553633fcd6789dc.jpeg" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; 1522190_569352_ans_4712394340c6455aa553633fcd6789dc.jpeg" data-image-height="165" data-image-width="459"><img class="confluence-embedded-image image-center" alt="Screenshot 2024-01-29 110631.png" width="231" loading="lazy" src="./View Source_files/Screenshot 2024-01-29 110631.png" data-image-src="https://yaraqah.atlassian.net/wiki/download/attachments/38764545/Screenshot%202024-01-29%20110631.png?version=1&amp;modificationDate=1717523571833&amp;cacheVersion=1&amp;api=v2" data-height="579" data-width="607" data-unresolved-comment-count="0" data-linked-resource-id="44630102" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screenshot 2024-01-29 110631.png" data-base-url="https://yaraqah.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="38764545" data-linked-resource-container-version="19" data-media-id="54ab3f5d-0a00-4011-b5ad-e30b37095325" data-media-type="file" title="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-29 110631.png" data-location="Wedad Almehmadi &gt; 2024/06/26 &gt; Wedad&#39;s Portfolio &gt; Screenshot 2024-01-29 110631.png" data-image-height="772" data-image-width="809"><p>I have created a sample calculation to automatically generate the orbital notation for each shell.</p><p></p><table class="wysiwyg-macro" data-macro-name="expand" data-macro-id="06ac0ec2-5f11-4d54-ac54-dbd2cdae84b5" data-macro-parameters="title=code - UIText" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2V4cGFuZDp0aXRsZT1jb2RlIC0gVUlUZXh0fQ&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="RICH_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><p></p><table class="wysiwyg-macro" data-macro-name="code" data-macro-id="7cccaa19-9ee3-4fa7-a023-27e3e98840c2" data-macro-parameters="language=c#" data-macro-schema-version="1" style="background-image: url(https://yaraqah.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro-heading?definition=e2NvZGU6bGFuZ3VhZ2U9YyN9&amp;locale=en_US&amp;version=2); background-repeat: no-repeat;" data-macro-body-type="PLAIN_TEXT"><tbody><tr><td class="wysiwyg-macro-body"><pre>public void orbitalNotation()
-{
-    int shell = ElectronConfigurationController.Instance.shellNumber +1;
-    int electronsInShell = ElectronConfigurationController.Instance.ElectronsInShell;
-    int maxSubshellElectron;
-    int currentElectrons;
-    string subshellName;
-
-    if (electronsInShell &gt;= 1)
-    {
-        maxSubshellElectron = 2;
-        subshellName = "s";
-
-        if (electronsInShell&gt;= maxSubshellElectron)
-        {
-            currentElectrons = maxSubshellElectron;
-        }
-        else
-        {
-            currentElectrons = electronsInShell;
-        }
-
-        switch (shell)
-        {
-            case 0:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 1:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 2:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 3:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 4:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-
-        }
-    }
-
-    if (electronsInShell &gt; 2)
-    {
-        electronsInShell -= 2; //minus the previous subshell max electron
-        maxSubshellElectron = 6;
-        subshellName = "p";
-
-        if (electronsInShell &gt;= maxSubshellElectron)
-        {
-            currentElectrons = maxSubshellElectron;
-        }
-        else
-        {
-            currentElectrons = electronsInShell;
-        }
-
-        switch (shell)
-        {
-            case 0:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 1:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 2:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 3:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 4:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-
-        }
-    }
-
-    if (electronsInShell &gt; 8)
-    {
-        electronsInShell -= 6; //minus the previous subshell max electron
-        maxSubshellElectron = 10;
-        subshellName = "d";
-
-        if (electronsInShell &gt;= maxSubshellElectron)
-        {
-            currentElectrons = maxSubshellElectron;
-        }
-        else
-        {
-            currentElectrons = electronsInShell;
-        }
-
-        switch (shell)
-        {
-            case 0:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 1:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 2:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 3:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 4:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-
-        }
-    }
-    if (electronsInShell &gt; 18)
-    {
-        electronsInShell -= 10; //minus the previous subshell max electron
-        maxSubshellElectron = 14;
-        subshellName = "f";
-
-        if (electronsInShell &gt;= maxSubshellElectron)
-        {
-            currentElectrons = maxSubshellElectron;
-        }
-        else
-        {
-            currentElectrons = electronsInShell;
-        }
-
-        switch (shell)
-        {
-            case 0:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 1:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 2:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 3:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 4:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-
-        }
-    }
-    if (electronsInShell &gt; 32)
-    {
-        electronsInShell -= 14; //minus the previous subshell max electron
-        maxSubshellElectron = 18;
-        subshellName = "g";
-
-        if (electronsInShell &gt;= maxSubshellElectron)
-        {
-            currentElectrons = maxSubshellElectron;
-        }
-        else
-        {
-            currentElectrons = electronsInShell;
-        }
-
-        switch (shell)
-        {
-            case 0:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 1:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 2:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 3:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-            case 4:
-                subshell.text += " " + shell + subshellName + "&lt;sup&gt;" + currentElectrons + "&lt;/sup&gt;";
-                break;
-
-        }
-    }
-
-}</pre></td></tr></tbody></table></td></tr></tbody></table>
-        <p>&nbsp;</p>
-    
-
-</body></html>
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
