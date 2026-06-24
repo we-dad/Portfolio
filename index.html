@@ -10,501 +10,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Sora:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Press+Start+2P&family=Almarai:wght@400;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
-<style>
-  :root{
-    --void: #0E0A1C;
-    --panel: #1B1532;
-    --panel-2: #14102A;
-    --hairline: #332B5C;
-    --violet: #A66BFF;
-    --amber: #F5A623;
-    --frame: #4A3F86;
-    --frame-bright: #7A6BD6;
-    --crimson: #D6553B;
-    --text: #EFEAFB;
-    --text-dim: #9D8FC4;
-
-    --font-display: "Russo One", "Chakra Petch", sans-serif;
-    --font-body: "Sora", system-ui, sans-serif;
-    --font-mono: "Space Mono", "SFMono-Regular", monospace;
-    --font-pixel: "Press Start 2P", "Space Mono", monospace;
-
-    --maxw: 1100px;
-  }
-
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
-    *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-  }
-
-  body{
-    margin: 0;
-    background: radial-gradient(1200px 700px at 50% -8%, rgba(166,107,255,0.10), transparent 60%), var(--void);
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  a{ color: var(--amber); text-decoration: none; }
-  a:focus-visible, button:focus-visible{
-    outline: 2px solid var(--violet);
-    outline-offset: 3px;
-  }
-
-  .bg-grid{
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(rgba(245,166,35,0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,166,35,0.045) 1px, transparent 1px);
-    background-size: 42px 42px;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.15) 60%, transparent 95%);
-  }
-
-  /* ---------- Boot screen ---------- */
-  .boot-screen{
-    position: fixed; inset: 0; z-index: 999;
-    background: var(--void);
-    display: flex; align-items: center; justify-content: center;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-  }
-  .boot-screen.is-done{ opacity: 0; visibility: hidden; pointer-events: none; }
-  .boot-inner{ width: min(360px, 80vw); }
-  .boot-label{
-    font-family: var(--font-mono); color: var(--amber); font-size: 0.74rem;
-    letter-spacing: 0.12em; margin: 0 0 12px;
-  }
-  .boot-line{ font-family: var(--font-mono); color: var(--text); font-size: 0.88rem; margin: 0 0 18px; }
-  .boot-line .blink-cursor{ display: inline-block; width: 7px; margin-left: 2px; animation: pulse 0.9s steps(2) infinite; }
-  .boot-bar{ height: 8px; background: var(--panel-2); border: 1px solid var(--hairline); overflow: hidden; }
-  .boot-bar-fill{ height: 100%; width: 0%; background: linear-gradient(90deg, var(--amber), var(--violet)); transition: width 0.18s linear; }
-  .boot-pct{ font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin: 10px 0 0; text-align: right; }
-  @media (prefers-reduced-motion: reduce){ .boot-screen{ display: none; } }
-
-  .crt{
-    position: fixed; inset: 0; z-index: 2; pointer-events: none;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      rgba(0,0,0,0) 0px,
-      rgba(0,0,0,0) 2px,
-      rgba(0,0,0,0.22) 3px
-    );
-    opacity: 0.7;
-    animation: crt-drift 9s linear infinite;
-  }
-  @keyframes crt-drift{ 0%{ background-position: 0 0; } 100%{ background-position: 0 120px; } }
-
-  .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
-
-  /* ---------- Topbar ---------- */
-  .topbar{
-    position: sticky; top: 0; z-index: 10;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 28px;
-    background: rgba(11,15,20,0.78);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--hairline);
-  }
-  .brand{ font-family: var(--font-display); font-weight: 700; letter-spacing: 0.04em; font-size: 1.1rem; }
-  .brand span{ color: var(--violet); }
-  .topnav{ display: flex; gap: 26px; }
-  .topnav a{
-    color: var(--text-dim); font-family: var(--font-mono); font-size: 0.78rem;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    transition: color 0.15s ease;
-  }
-  .topnav a:hover{ color: var(--amber); }
-  .status-pill{
-    display: flex; align-items: center; gap: 8px;
-    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
-    color: var(--text-dim); border: 1px solid var(--hairline);
-    padding: 6px 14px 6px 12px;
-    clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px));
-  }
-  .status-pill .dot{
-    width: 7px; height: 7px; border-radius: 50%; background: var(--violet);
-    box-shadow: 0 0 8px var(--violet);
-    animation: pulse 1.8s ease-in-out infinite;
-  }
-  @keyframes pulse{ 0%,100%{ opacity: 1; } 50%{ opacity: 0.35; } }
-
-  @media (max-width: 760px){ .topnav{ display: none; } }
-
-  /* ---------- Corner frame device ---------- */
-  /* ---------- Chamfered panel frame (signature shape) ---------- */
-  .frame{
-    position: relative;
-    --cut: 36px;
-    clip-path: polygon(
-      0 0, calc(100% - var(--cut)) 0, 100% var(--cut),
-      100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut))
-    );
-  }
-
-
-  /* ---------- Hero ---------- */
-  .hero{
-    margin: 48px auto 0; max-width: var(--maxw);
-    padding: 72px 48px 56px;
-    border: 1.5px solid var(--frame);
-    background: linear-gradient(180deg, rgba(18,26,35,0.6), rgba(14,20,27,0.4));
-    overflow: hidden;
-  }
-  .hero-grid{ display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
-  @media (max-width: 820px){ .hero-grid{ grid-template-columns: 1fr; } }
-  .eyebrow{
-    font-family: var(--font-mono); color: var(--amber); letter-spacing: 0.12em;
-    font-size: 0.8rem; margin: 0 0 18px;
-  }
-  .hero h1{
-    font-family: var(--font-display); font-weight: 700; letter-spacing: 0.02em;
-    font-size: clamp(2.6rem, 6vw, 4.6rem); margin: 0 0 18px; line-height: 1.02;
-  }
-  .lede{ max-width: 620px; color: var(--text); font-size: 1.05rem; margin: 0 0 30px; }
-  .hero-actions{ display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
-  .btn{
-    font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.06em;
-    padding: 12px 24px; display: inline-block;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
-  }
-  .btn-primary{ background: var(--violet); color: var(--void); border: 1px solid var(--violet); }
-  .btn-primary:hover{ transform: translateY(-2px); }
-  .btn-ghost{ background: transparent; color: var(--text); border: 1px solid var(--hairline); }
-  .btn-ghost:hover{ border-color: var(--amber); color: var(--amber); transform: translateY(-2px); }
-
-  .telemetry{
-    font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);
-    letter-spacing: 0.08em; border-top: 1px solid var(--hairline); padding-top: 16px;
-  }
-
-  .player-card{
-    border: 1px solid var(--frame); background: var(--panel-2);
-    padding: 22px 22px 18px;
-    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
-  }
-  .player-card .pc-head{
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--hairline);
-  }
-  .player-card .pc-name{ font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
-  .player-card .pc-lvl{
-    font-family: var(--font-pixel); font-size: 0.62rem; color: var(--violet);
-    border: 1px solid rgba(166,107,255,0.4); padding: 5px 7px; line-height: 1;
-  }
-  .pc-row{
-    display: flex; justify-content: space-between; gap: 12px;
-    font-family: var(--font-mono); font-size: 0.8rem; padding: 8px 0;
-    border-bottom: 1px dashed var(--hairline);
-  }
-  .pc-row:last-child{ border-bottom: none; }
-  .pc-row .pc-key{ color: var(--text-dim); letter-spacing: 0.04em; }
-  .pc-row .pc-val{ color: var(--text); text-align: right; }
-  .pc-xp{ margin-top: 16px; }
-  .pc-xp-label{
-    display: flex; justify-content: space-between; font-family: var(--font-mono);
-    font-size: 0.68rem; color: var(--text-dim); margin-bottom: 6px; letter-spacing: 0.06em;
-  }
-  .pc-xp-bar{ height: 8px; background: var(--void); border: 1px solid var(--hairline); overflow: hidden; }
-  .pc-xp-fill{ height: 100%; width: 78%; background: linear-gradient(90deg, var(--amber), var(--violet)); }
-
-  .scan-sweep{
-    position: absolute; left: 0; right: 0; height: 2px; top: 0;
-    background: linear-gradient(90deg, transparent, var(--amber), transparent);
-    opacity: 0;
-    animation: sweep 5s ease-in-out infinite;
-    animation-delay: 1.5s;
-    animation-fill-mode: backwards;
-  }
-  @keyframes sweep{
-    0%{ top: 0%; opacity: 0; }
-    6%{ opacity: 0.9; }
-    42%{ top: 100%; opacity: 0; }
-    100%{ top: 100%; opacity: 0; }
-  }
-
-  /* ---------- Section shell ---------- */
-  main section, footer.contact{ padding: 92px 0 0; }
-  .eyebrow-mono{
-    font-family: var(--font-mono); color: var(--text-dim); font-size: 0.74rem;
-    letter-spacing: 0.12em; margin: 0 0 10px;
-  }
-  .section-title{
-    font-family: var(--font-display); font-weight: 600; letter-spacing: 0.03em;
-    font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 12px; color: var(--text);
-  }
-  .section-sub{ color: var(--text-dim); max-width: 560px; margin: 0 0 44px; }
-
-  .reveal{ opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
-  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
-
-  /* ---------- Loadout ---------- */
-  .loadout-rows{ display: flex; flex-direction: column; gap: 12px; }
-  .loadout-row{
-    display: flex; align-items: stretch;
-    border: 1px solid var(--hairline); background: var(--panel-2);
-    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
-    overflow: hidden;
-  }
-  .loadout-label{
-    flex: 0 0 190px; display: flex; align-items: center;
-    background: linear-gradient(135deg, var(--frame), rgba(74,63,134,0.15));
-    border-right: 1px solid var(--hairline);
-    padding: 16px 18px;
-    font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em;
-    color: var(--amber); text-transform: uppercase;
-  }
-  .loadout-chips{
-    flex: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-    padding: 16px 18px;
-  }
-  @media (max-width: 620px){
-    .loadout-row{ flex-direction: column; }
-    .loadout-label{ flex: 0 0 auto; width: 100%; border-right: none; border-bottom: 1px solid var(--hairline); }
-  }
-  .chip{
-    font-family: var(--font-mono); font-size: 0.78rem; color: var(--text);
-    border: 1px solid var(--hairline); padding: 5px 12px;
-    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  .chip:hover{ border-color: var(--violet); color: var(--violet); }
-
-  /* ---------- Space Journey (Experience) ---------- */
-  .starfield{
-    position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
-    background-image:
-      radial-gradient(2px 2px at 8% 12%, rgba(255,255,255,0.55) 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 78% 8%, rgba(255,255,255,0.4) 50%, transparent 51%),
-      radial-gradient(2px 2px at 32% 28%, rgba(255,255,255,0.5) 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 58% 42%, rgba(255,255,255,0.35) 50%, transparent 51%),
-      radial-gradient(2px 2px at 88% 55%, rgba(255,255,255,0.45) 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 18% 60%, rgba(255,255,255,0.3) 50%, transparent 51%),
-      radial-gradient(2px 2px at 44% 75%, rgba(255,255,255,0.4) 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 70% 88%, rgba(255,255,255,0.35) 50%, transparent 51%),
-      radial-gradient(2px 2px at 10% 92%, rgba(255,255,255,0.4) 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 92% 30%, rgba(255,255,255,0.3) 50%, transparent 51%);
-    animation: twinkle 4.5s ease-in-out infinite alternate;
-  }
-  @keyframes twinkle{ 0%{ opacity: 0.45; } 100%{ opacity: 1; } }
-
-  .space-route{ position: relative; }
-  .route-svg{ position: absolute; left: 0; top: 0; z-index: 1; overflow: visible; pointer-events: none; }
-  .route-path{ fill: none; stroke: rgba(245,166,35,0.4); stroke-width: 1.5; stroke-dasharray: 3 7; stroke-linecap: round; }
-  .route-ship{
-    position: absolute; left: 0; top: 0; z-index: 3; width: 12px; height: 12px;
-    border-radius: 50%; pointer-events: none; opacity: 0;
-    background: radial-gradient(circle, #fffaf0 0%, var(--violet) 55%, transparent 100%);
-    filter: drop-shadow(0 0 6px var(--violet)) drop-shadow(0 0 14px rgba(166,107,255,0.65));
-    transition: opacity 0.5s ease;
-  }
-  .route-ship.is-visible{ opacity: 1; }
-
-  .timeline{ list-style: none; margin: 0; padding: 0; position: relative; z-index: 2; }
-  .timeline li{ position: relative; padding: 0 0 48px 42px; }
-  .timeline li:last-child{ padding-bottom: 4px; }
-  .tl-star{
-    position: absolute; left: -3px; top: 2px; width: 20px; height: 20px;
-    background: var(--violet);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    filter: drop-shadow(0 0 5px rgba(166,107,255,0.85));
-    animation: star-twinkle 2.6s ease-in-out infinite;
-  }
-  @keyframes star-twinkle{
-    0%, 100%{ opacity: 0.7; transform: scale(0.9); filter: drop-shadow(0 0 3px rgba(166,107,255,0.6)); }
-    50%{ opacity: 1; transform: scale(1.08); filter: drop-shadow(0 0 8px rgba(166,107,255,0.95)); }
-  }
-  .timeline li:nth-child(2) .tl-star{ animation-delay: 0.45s; }
-  .timeline li:nth-child(3) .tl-star{ animation-delay: 0.9s; }
-  .timeline li:nth-child(4) .tl-star{ animation-delay: 1.35s; }
-  .timeline li:nth-child(5) .tl-star{ animation-delay: 1.8s; }
-  .tl-date{
-    font-family: var(--font-mono); font-size: 0.74rem; color: var(--violet);
-    letter-spacing: 0.06em; display: block; margin-bottom: 6px;
-  }
-  .tl-role{ font-family: var(--font-display); font-size: 1.18rem; font-weight: 600; margin: 0 0 2px; }
-  .tl-org{ color: var(--text-dim); font-size: 0.92rem; margin: 0 0 12px; }
-  .tl-list{ margin: 0; padding-left: 20px; color: var(--text); }
-  .tl-list li{ padding: 0; margin-bottom: 6px; }
-  .tl-list li::before{ content: none; }
-
-  /* ---------- Projects / Level Select ---------- */
-  .project-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  @media (max-width: 760px){ .project-grid{ grid-template-columns: 1fr; } }
-  .card{
-    position: relative; border: 1.5px solid var(--frame); background: var(--panel);
-    padding: 26px 24px; transition: transform 0.18s ease, border-color 0.18s ease;
-    --cut: 20px;
-    clip-path: polygon(
-      0 0, calc(100% - var(--cut)) 0, 100% var(--cut),
-      100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut))
-    );
-  }
-  .card:hover{ transform: translateY(-3px); border-color: var(--frame-bright); }
-  .card-tags{ display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-  .tag{
-    font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em;
-    text-transform: uppercase; color: var(--amber); border: 1px solid rgba(245,166,35,0.35);
-    padding: 3px 10px;
-    clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
-  }
-  .tag-fact{ color: var(--violet); border-color: rgba(166,107,255,0.4); }
-  .card h3{ font-family: var(--font-display); font-size: 1.25rem; margin: 0 0 4px; }
-  .card-meta{ font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); margin: 0 0 14px; }
-  .card ul{ margin: 0; padding-left: 18px; color: var(--text); font-size: 0.94rem; }
-  .card ul li{ margin-bottom: 8px; }
-
-  /* ---------- Education ---------- */
-  .edu-list{ display: flex; flex-direction: column; gap: 22px; }
-  .edu-item{ border-left: 2px solid var(--hairline); padding-left: 20px; }
-  .edu-item .tl-date{ margin-bottom: 4px; }
-  .edu-item h3{ font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 4px; }
-  .edu-item .tl-org{ margin-bottom: 8px; }
-  .edu-item p{ margin: 0; color: var(--text); font-size: 0.94rem; }
-
-  .lang-row{
-    display: flex; gap: 28px; margin-top: 34px; font-family: var(--font-mono);
-    font-size: 0.82rem; color: var(--text-dim); flex-wrap: wrap;
-  }
-  .lang-row strong{ color: var(--text); }
-
-  /* ---------- Contact / Open Channel ---------- */
-  footer.contact{
-    margin: 92px auto 60px; max-width: var(--maxw);
-    border: 1.5px solid var(--frame); padding: 56px 48px;
-    background: linear-gradient(180deg, rgba(18,26,35,0.6), rgba(14,20,27,0.4));
-  }
-  .contact-grid{
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px; margin-top: 36px;
-  }
-  .contact-item{
-    border: 1px solid var(--hairline); padding: 18px; background: var(--panel-2);
-    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
-  }
-  .contact-item h4{
-    font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em;
-    color: var(--text-dim); text-transform: uppercase; margin: 0 0 8px;
-  }
-  .contact-item a, .contact-item span{
-    font-family: var(--font-body); font-size: 0.8rem; color: var(--text);
-    word-break: break-word; overflow-wrap: anywhere;
-  }
-  .contact-item a:hover{ color: var(--amber); }
-
-  .social-row{ display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
-  .social-icon{
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 38px; height: 38px; color: var(--text);
-    border: 1px solid var(--hairline); background: var(--panel);
-    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
-    transition: color 0.15s ease, border-color 0.15s ease;
-  }
-  .social-icon svg{ width: 18px; height: 18px; fill: currentColor; }
-  .social-icon:hover{ color: var(--amber); border-color: var(--amber); }
-  .social-icon--text{
-    width: auto; padding: 0 12px;
-    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.02em;
-  }
-  .foot-note{
-    margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--hairline);
-    font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim);
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-
-  @media (max-width: 600px){
-    .hero{ padding: 56px 24px 40px; }
-    footer.contact{ padding: 40px 24px; }
-    main section{ padding-top: 64px; }
-  }
-
-  /* ---------- TV / glitch text effect ---------- */
-  .hero h1, .section-title{
-    position: relative;
-    display: inline-block;
-  }
-  .hero h1::before, .hero h1::after,
-  .section-title::before, .section-title::after{
-    content: attr(data-text);
-    position: absolute; left: 0; top: 0; width: 100%; height: 100%;
-    background: transparent;
-    pointer-events: none;
-  }
-  .hero h1::before, .section-title::before{
-    color: var(--violet);
-    clip-path: inset(0 0 55% 0);
-    transform: translate(0, 0);
-    opacity: 0;
-    animation: glitch-1 6s infinite;
-  }
-  .hero h1::after, .section-title::after{
-    color: var(--amber);
-    clip-path: inset(45% 0 0 0);
-    transform: translate(0, 0);
-    opacity: 0;
-    animation: glitch-2 6s infinite;
-  }
-  @keyframes glitch-1{
-    0%, 90%, 100%{ transform: translate(0,0); opacity: 0; }
-    91%{ transform: translate(-4px,-1px); opacity: 0.85; }
-    93%{ transform: translate(3px,1px); opacity: 0.6; }
-    95%{ transform: translate(-2px,0); opacity: 0.75; }
-    97%{ transform: translate(2px,1px); opacity: 0.4; }
-    98%{ opacity: 0; }
-  }
-  @keyframes glitch-2{
-    0%, 90%, 100%{ transform: translate(0,0); opacity: 0; }
-    91%{ transform: translate(4px,1px); opacity: 0.8; }
-    93%{ transform: translate(-3px,-1px); opacity: 0.55; }
-    95%{ transform: translate(2px,0); opacity: 0.7; }
-    97%{ transform: translate(-2px,-1px); opacity: 0.4; }
-    98%{ opacity: 0; }
-  }
-  .section-title::before, .section-title::after{ animation-delay: 1.4s; }
-
-  /* ---------- Language toggle ---------- */
-  .topbar-right{ display: flex; align-items: center; gap: 12px; }
-  .lang-toggle{
-    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
-    color: var(--text); background: transparent; border: 1px solid var(--frame);
-    padding: 6px 12px; cursor: pointer;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  .lang-toggle:hover{ border-color: var(--amber); color: var(--amber); }
-
-  /* ---------- Arabic / RTL ---------- */
-  body.is-ar{
-    --font-display: "Almarai", "Russo One", sans-serif;
-    --font-body: "Tajawal", "Sora", sans-serif;
-    --font-mono: "Tajawal", "Space Mono", monospace;
-    --font-pixel: "Tajawal", "Press Start 2P", monospace;
-  }
-  body.is-ar .pc-val,
-  body.is-ar .boot-pct{ text-align: start; }
-  body.is-ar .loadout-label{ border-right: none; border-left: 1px solid var(--hairline); }
-  body.is-ar .edu-item{ border-left: none; border-right: 2px solid var(--hairline); padding-left: 0; padding-right: 20px; }
-  body.is-ar .tl-list, body.is-ar .card ul{ padding-left: 0; padding-right: 20px; }
-  body.is-ar .timeline li{ padding: 0 42px 48px 0; }
-  body.is-ar .tl-star{ left: auto; right: -3px; }
-
-  body.is-ar, body.is-ar *{ letter-spacing: normal !important; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="boot-screen" id="boot-screen">
   <div class="boot-inner">
-    <p class="boot-label" data-en="// SYSTEM BOOT" data-ar="// تشغيل النظام">// SYSTEM BOOT</p>
-    <p class="boot-line"><span data-en="LOADING WEDAD_SALEM.profile" data-ar="تحميل WEDAD_SALEM.profile">LOADING WEDAD_SALEM.profile</span><span class="blink-cursor">_</span></p>
+    <p class="boot-label" data-i18n="system_boot">// SYSTEM BOOT</p>
+    <p class="boot-line"><span data-i18n="loading_wedad_salem_profile">LOADING WEDAD_SALEM.profile</span><span class="blink-cursor">_</span></p>
     <div class="boot-bar"><div class="boot-bar-fill" id="boot-fill"></div></div>
     <p class="boot-pct" id="boot-pct">0%</p>
   </div>
@@ -516,15 +29,15 @@
 <header class="topbar">
   <div class="brand">WS<span>.</span></div>
   <nav class="topnav">
-    <a href="#loadout" data-en="Skills" data-ar="المهارات">Skills</a>
-    <a href="#experience" data-en="Experience" data-ar="الخبرة">Experience</a>
-    <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
-    <a href="#education" data-en="Education" data-ar="التعليم">Education</a>
-    <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+    <a href="#loadout" data-i18n="skills">Skills</a>
+    <a href="#experience" data-i18n="experience">Experience</a>
+    <a href="#projects" data-i18n="projects">Projects</a>
+    <a href="#education" data-i18n="education">Education</a>
+    <a href="#contact" data-i18n="contact">Contact</a>
   </nav>
   <div class="topbar-right">
     <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">AR</button>
-    <div class="status-pill"><span class="dot" aria-hidden="true"></span><span data-en="ONLINE · OPEN TO WORK" data-ar="متصلة · متاحة للعمل">ONLINE · OPEN TO WORK</span></div>
+    <div class="status-pill"><span class="dot" aria-hidden="true"></span><span data-i18n="online_open_to_work">ONLINE · OPEN TO WORK</span></div>
   </div>
 </header>
 
@@ -535,28 +48,27 @@
 
     <div class="hero-grid">
       <div>
-        <p class="eyebrow" data-en="// GAME PROGRAMMER — SAUDI ARABIA" data-ar="// مبرمجة ألعاب — المملكة العربية السعودية">// GAME PROGRAMMER — SAUDI ARABIA</p>
-        <h1 data-en="WEDAD SALEM" data-ar="وداد سالم" data-text="WEDAD SALEM">WEDAD SALEM</h1>
-        <p class="lede" data-en="Building gameplay systems, mechanics, and UI in Unity and C# since 2021, across studio and freelance work. Shipped a mobile game to Google Play with FitNot, programmed educational mini-games at GamifierSA, and mentored Unity students at DigiPen during Gamers8. I like owning a feature end-to-end — prototype the mechanic, ship it, then debug it on whatever device a real player is holding." data-ar="أبني أنظمة الألعاب والميكانيكات وواجهات المستخدم بـ Unity و C# منذ عام 2021، في العمل المؤسسي والمستقل. أطلقت لعبة موبايل على Google Play مع FitNot، وبرمجت ألعاباً تعليمية مصغّرة في GamifierSA، ودرّبت طلاب Unity في DigiPen خلال برنامج Gamers8. أحب امتلاك الميزة من البداية للنهاية: تجربة الميكانيكا، إطلاقها، ثم تصحيح أخطائها على أي جهاز يحمله لاعب حقيقي.">Building gameplay systems, mechanics, and UI in Unity and C# since 2021, across studio and freelance work. Shipped a mobile game to Google Play with FitNot, programmed educational mini-games at GamifierSA, and mentored Unity students at DigiPen during Gamers8. I like owning a feature end-to-end — prototype the mechanic, ship it, then debug it on whatever device a real player is holding.</p>
+        <p class="eyebrow" data-i18n="game_programmer_saudi_arabia">// GAME PROGRAMMER — SAUDI ARABIA</p>
+        <h1 data-i18n="wedad_salem" data-text="WEDAD SALEM">WEDAD SALEM</h1>
+        <p class="lede" data-i18n="building_gameplay_systems_me">Building gameplay systems, mechanics, and UI in Unity and C# since 2021, across studio and freelance work. Shipped a mobile game to Google Play with FitNot, programmed educational mini-games at GamifierSA, and mentored Unity students at DigiPen during Gamers8. I'm comfortable handling features from prototype to release, including debugging on real player devices.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects" data-en="▶ View Projects" data-ar="▶ عرض المشاريع">▶ View Projects</a>
-          <a class="btn btn-ghost" href="#contact" data-en="✉ Get in Touch" data-ar="✉ تواصل معي">✉ Get in Touch</a>
+          <a class="btn btn-primary" href="#projects" data-i18n="view_projects">▶ View Projects</a>
+          <a class="btn btn-ghost" href="#contact" data-i18n="get_in_touch">✉ Get in Touch</a>
         </div>
-        <p class="telemetry" data-en="COORDS 24.52°N 39.57°E  ·  CODING SINCE 2021  ·  STATUS: OPEN TO FREELANCE & FULL-TIME ROLES" data-ar="الموقع 24.52°ش 39.57°ق  ·  البرمجة منذ 2021  ·  الحالة: متاحة للعمل المستقل والدوام الكامل">COORDS 24.52°N 39.57°E &nbsp;·&nbsp; CODING SINCE 2021 &nbsp;·&nbsp; STATUS: OPEN TO FREELANCE &amp; FULL-TIME ROLES</p>
       </div>
 
       <div class="player-card">
         <div class="pc-head">
-          <span class="pc-name" data-en="WEDAD SALEM" data-ar="وداد سالم">WEDAD SALEM</span>
-          <span class="pc-lvl" data-en="LVL 5" data-ar="المستوى 5">LVL 5</span>
+          <span class="pc-name" data-i18n="wedad_salem">WEDAD SALEM</span>
+          <span class="pc-lvl" data-i18n="lvl_4">LVL 4</span>
         </div>
-        <div class="pc-row"><span class="pc-key" data-en="CLASS" data-ar="الفئة">CLASS</span><span class="pc-val" data-en="Game Programmer" data-ar="مبرمجة ألعاب">Game Programmer</span></div>
-        <div class="pc-row"><span class="pc-key" data-en="SPECIALIZATION" data-ar="التخصص">SPECIALIZATION</span><span class="pc-val">Unity / C#</span></div>
-        <div class="pc-row"><span class="pc-key" data-en="ACTIVE SINCE" data-ar="نشطة منذ">ACTIVE SINCE</span><span class="pc-val">2021</span></div>
-        <div class="pc-row"><span class="pc-key" data-en="PLATFORMS" data-ar="المنصات">PLATFORMS</span><span class="pc-val" data-en="Mobile · PC · Web" data-ar="موبايل · حاسوب · ويب">Mobile · PC · Web</span></div>
-        <div class="pc-row"><span class="pc-key" data-en="GUILD" data-ar="النقابة">GUILD</span><span class="pc-val" data-en="Freelance" data-ar="مستقلة">Freelance</span></div>
+        <div class="pc-row"><span class="pc-key" data-i18n="class">CLASS</span><span class="pc-val" data-i18n="game_programmer">Game Programmer</span></div>
+        <div class="pc-row"><span class="pc-key" data-i18n="specialization">SPECIALIZATION</span><span class="pc-val">Unity / C#</span></div>
+        <div class="pc-row"><span class="pc-key" data-i18n="active_since">ACTIVE SINCE</span><span class="pc-val">2021</span></div>
+        <div class="pc-row"><span class="pc-key" data-i18n="platforms">PLATFORMS</span><span class="pc-val" data-i18n="mobile_pc_web">Mobile · PC · Web</span></div>
+        <div class="pc-row"><span class="pc-key" data-i18n="guild">GUILD</span><span class="pc-val" data-i18n="freelance">Freelance</span></div>
         <div class="pc-xp">
-          <div class="pc-xp-label"><span data-en="XP — YEARS ACTIVE" data-ar="نقاط الخبرة — سنوات النشاط">XP — YEARS ACTIVE</span><span>5 / 6</span></div>
+          <div class="pc-xp-label"><span data-i18n="xp_years_active">XP — YEARS ACTIVE</span><span>4 / 5</span></div>
           <div class="pc-xp-bar"><div class="pc-xp-fill"></div></div>
         </div>
       </div>
@@ -564,44 +76,44 @@
   </section>
 
   <section id="loadout">
-    <p class="eyebrow-mono" data-en="// 01 — SKILLS" data-ar="// 01 — المهارات">// 01 — SKILLS</p>
-    <h2 class="section-title" data-en="Skills" data-ar="المهارات" data-text="Skills">Skills</h2>
+    <p class="eyebrow-mono" data-i18n="01_skills">// 01 — SKILLS</p>
+    <h2 class="section-title" data-i18n="skills" data-text="Skills">Skills</h2>
 
     <div class="loadout-rows">
       <div class="loadout-row reveal">
-        <div class="loadout-label" data-en="Languages" data-ar="اللغات">Languages</div>
-        <div class="loadout-chips"><span class="chip">C#</span><span class="chip">Swift</span></div>
+        <div class="loadout-label" data-i18n="languages">Languages</div>
+        <div class="loadout-chips"><span class="chip">C#</span><span class="chip">Swift</span><span class="chip">Java</span><span class="chip">Python</span></div>
       </div>
       <div class="loadout-row reveal">
-        <div class="loadout-label" data-en="Engines &amp; Tools" data-ar="المحركات والأدوات">Engines &amp; Tools</div>
+        <div class="loadout-label" data-i18n="engines_and_tools">Engines &amp; Tools</div>
         <div class="loadout-chips"><span class="chip">Unity 3D</span><span class="chip">Xcode</span></div>
       </div>
       <div class="loadout-row reveal">
-        <div class="loadout-label" data-en="Gameplay Programming" data-ar="برمجة تجربة اللعب">Gameplay Programming</div>
-        <div class="loadout-chips"><span class="chip" data-en="Mechanics" data-ar="الميكانيكات">Mechanics</span><span class="chip" data-en="UI Systems" data-ar="أنظمة الواجهة">UI Systems</span><span class="chip" data-en="Animation" data-ar="الرسوم المتحركة">Animation</span><span class="chip" data-en="Mobile Optimization" data-ar="تحسين أداء الموبايل">Mobile Optimization</span></div>
+        <div class="loadout-label" data-i18n="gameplay_programming">Gameplay Programming</div>
+        <div class="loadout-chips"><span class="chip" data-i18n="mechanics">Mechanics</span><span class="chip" data-i18n="ui_systems">UI Systems</span><span class="chip" data-i18n="animation">Animation</span><span class="chip" data-i18n="mobile_optimization">Mobile Optimization</span></div>
       </div>
       <div class="loadout-row reveal">
-        <div class="loadout-label" data-en="Architecture &amp; Patterns" data-ar="البنية والأنماط البرمجية">Architecture &amp; Patterns</div>
-        <div class="loadout-chips"><span class="chip">ECS / Data-Oriented Design</span><span class="chip" data-en="Observer Pattern" data-ar="نمط المراقب (Observer)">Observer Pattern</span></div>
+        <div class="loadout-label" data-i18n="architecture_and_patterns">Architecture &amp; Patterns</div>
+        <div class="loadout-chips"><span class="chip">ECS / Data-Oriented Design</span><span class="chip" data-i18n="observer_pattern">Observer Pattern</span></div>
       </div>
       <div class="loadout-row reveal">
-        <div class="loadout-label" data-en="Backend &amp; Services" data-ar="الخدمات الخلفية">Backend &amp; Services</div>
+        <div class="loadout-label" data-i18n="backend_and_services">Backend &amp; Services</div>
         <div class="loadout-chips"><span class="chip">PlayFab</span><span class="chip">Firebase</span></div>
       </div>
       <div class="loadout-row reveal">
-        <div class="loadout-label" data-en="Version Control" data-ar="التحكم بالإصدارات">Version Control</div>
+        <div class="loadout-label" data-i18n="version_control">Version Control</div>
         <div class="loadout-chips"><span class="chip">Git</span><span class="chip">GitHub</span></div>
       </div>
       <div class="loadout-row reveal">
-        <div class="loadout-label" data-en="Platforms" data-ar="المنصات">Platforms</div>
-        <div class="loadout-chips"><span class="chip" data-en="Mobile — Android" data-ar="موبايل — أندرويد">Mobile — Android</span><span class="chip" data-en="Mobile — iOS" data-ar="موبايل — iOS">Mobile — iOS</span></div>
+        <div class="loadout-label" data-i18n="platforms_2">Platforms</div>
+        <div class="loadout-chips"><span class="chip" data-i18n="mobile_android">Mobile — Android</span><span class="chip" data-i18n="mobile_ios">Mobile — iOS</span><span class="chip" data-i18n="web">Web</span><span class="chip" data-i18n="pc">PC</span></div>
       </div>
     </div>
   </section>
 
   <section id="experience">
-    <p class="eyebrow-mono" data-en="// 02 — EXPERIENCE" data-ar="// 02 — الخبرة">// 02 — EXPERIENCE</p>
-    <h2 class="section-title" data-en="Experience" data-ar="الخبرة" data-text="Experience">Experience</h2>
+    <p class="eyebrow-mono" data-i18n="02_experience">// 02 — EXPERIENCE</p>
+    <h2 class="section-title" data-i18n="experience" data-text="Experience">Experience</h2>
 
     <div class="space-route">
       <div class="starfield" aria-hidden="true"></div>
@@ -611,49 +123,49 @@
       <ol class="timeline">
         <li class="reveal">
           <span class="tl-star" aria-hidden="true"></span>
-          <span class="tl-date" data-en="2025 — PRESENT · REMOTE" data-ar="2025 — حتى الآن · عن بُعد">2025 — PRESENT · REMOTE</span>
-          <h3 class="tl-role" data-en="Freelance Game Developer" data-ar="مطوّرة ألعاب مستقلة">Freelance Game Developer</h3>
-          <p class="tl-org" data-en="Independent" data-ar="مستقلة">Independent</p>
+          <span class="tl-date" data-i18n="2025_present_remote">2025 — PRESENT · REMOTE</span>
+          <h3 class="tl-role" data-i18n="freelance_game_developer">Freelance Game Developer</h3>
+          <p class="tl-org" data-i18n="independent">Independent</p>
           <ul class="tl-list">
-            <li data-en="Delivered Unity game development and software projects for clients on short-term contracts, owning features end-to-end from scope to delivery." data-ar="نفّذت مشاريع تطوير ألعاب وبرمجيات بـ Unity لعملاء بعقود قصيرة المدى، مع امتلاك الميزات من البداية حتى التسليم.">Delivered Unity game development and software projects for clients on short-term contracts, owning features end-to-end from scope to delivery.</li>
+            <li data-i18n="delivered_unity_game_develop">Delivered Unity game development and software projects for clients on short-term contracts, owning features end-to-end from scope to delivery.</li>
           </ul>
         </li>
         <li class="reveal">
           <span class="tl-star" aria-hidden="true"></span>
-          <span class="tl-date" data-en="DEC 2023 — MAY 2024 · REMOTE" data-ar="ديسمبر 2023 — مايو 2024 · عن بُعد">DEC 2023 — MAY 2024 · REMOTE</span>
-          <h3 class="tl-role" data-en="Game Programmer" data-ar="مبرمجة ألعاب">Game Programmer</h3>
+          <span class="tl-date" data-i18n="dec_2023_may_2024_remote">DEC 2023 — MAY 2024 · REMOTE</span>
+          <h3 class="tl-role" data-i18n="game_programmer">Game Programmer</h3>
           <p class="tl-org">GamifierSA</p>
           <ul class="tl-list">
-            <li data-en="Shipped 3 mobile games as the sole or lead programmer on small teams, owning Unity / C# gameplay code from spec to release." data-ar="أطلقت 3 ألعاب موبايل كمبرمجة منفردة أو رئيسية في فرق صغيرة، مع امتلاك كود اللعب بـ Unity / C# من المواصفات حتى الإطلاق.">Shipped 3 mobile games as the sole or lead programmer on small teams, owning Unity / C# gameplay code from spec to release.</li>
-            <li data-en="Collaborated closely with designers and artists across iteration cycles to refine mechanics and ship on schedule." data-ar="تعاونت بشكل وثيق مع المصممين والفنانين عبر دورات التكرار لتحسين الميكانيكات والإطلاق في الوقت المحدد.">Collaborated closely with designers and artists across iteration cycles to refine mechanics and ship on schedule.</li>
+            <li data-i18n="shipped_3_mobile_games_as_th">Shipped 3 mobile games as the sole or lead programmer on small teams, owning Unity / C# gameplay code from spec to release.</li>
+            <li data-i18n="collaborated_closely_with_de">Collaborated closely with designers and artists across iteration cycles to refine mechanics and ship on schedule.</li>
           </ul>
         </li>
         <li class="reveal">
           <span class="tl-star" aria-hidden="true"></span>
-          <span class="tl-date" data-en="JUL 2023 — SEP 2023 · RIYADH, KSA" data-ar="يوليو 2023 — سبتمبر 2023 · الرياض، السعودية">JUL 2023 — SEP 2023 · RIYADH, KSA</span>
-          <h3 class="tl-role" data-en="Game Development Instructor" data-ar="مدرّبة تطوير ألعاب">Game Development Instructor</h3>
+          <span class="tl-date" data-i18n="jul_2023_sep_2023_riyadh_ksa">JUL 2023 — SEP 2023 · RIYADH, KSA</span>
+          <h3 class="tl-role" data-i18n="game_development_instructor">Game Development Instructor</h3>
           <p class="tl-org">DigiPen Institute of Technology</p>
           <ul class="tl-list">
-            <li data-en="Mentored student teams during the Gamers8 program, guiding them from concept to a playable Unity build across a multi-week sprint." data-ar="أرشدت فرق طلاب خلال برنامج Gamers8، من الفكرة إلى نسخة قابلة للّعب بـ Unity عبر سباق عمل متعدد الأسابيع.">Mentored student teams during the Gamers8 program, guiding them from concept to a playable Unity build across a multi-week sprint.</li>
+            <li data-i18n="mentored_student_teams_durin">Mentored student teams during the Gamers8 program, guiding them from concept to a playable Unity build across a multi-week sprint.</li>
           </ul>
         </li>
         <li class="reveal">
           <span class="tl-star" aria-hidden="true"></span>
-          <span class="tl-date" data-en="OCT 2022 — APR 2023 · RIYADH, KSA" data-ar="أكتوبر 2022 — أبريل 2023 · الرياض، السعودية">OCT 2022 — APR 2023 · RIYADH, KSA</span>
-          <h3 class="tl-role" data-en="Game Developer (Accelerator)" data-ar="مطوّرة ألعاب (برنامج تسريع)">Game Developer (Accelerator)</h3>
+          <span class="tl-date" data-i18n="oct_2022_apr_2023_riyadh_ksa">OCT 2022 — APR 2023 · RIYADH, KSA</span>
+          <h3 class="tl-role" data-i18n="game_developer_incubator">Game Developer (Incubator)</h3>
           <p class="tl-org">GameFounders</p>
           <ul class="tl-list">
-            <li data-en="Selected for an international games-focused accelerator; developed a game concept under industry mentorship and pitched to investors and publishers." data-ar="تم اختياري لبرنامج تسريع عالمي متخصص في الألعاب؛ طوّرت فكرة لعبة بتوجيه من خبراء الصناعة وقدّمتها لمستثمرين وناشرين.">Selected for an international games-focused accelerator; developed a game concept under industry mentorship and pitched to investors and publishers.</li>
+            <li data-i18n="selected_for_an_internationa">Selected for an international games-focused Incubator; developed a game concept under industry mentorship and pitched to investors and publishers.</li>
           </ul>
         </li>
         <li class="reveal">
           <span class="tl-star" aria-hidden="true"></span>
-          <span class="tl-date" data-en="FEB 2022 — APR 2022 · REMOTE" data-ar="فبراير 2022 — أبريل 2022 · عن بُعد">FEB 2022 — APR 2022 · REMOTE</span>
-          <h3 class="tl-role" data-en="Game Programmer" data-ar="مبرمجة ألعاب">Game Programmer</h3>
+          <span class="tl-date" data-i18n="feb_2022_apr_2022_remote">FEB 2022 — APR 2022 · REMOTE</span>
+          <h3 class="tl-role" data-i18n="game_programmer">Game Programmer</h3>
           <p class="tl-org">FitNot</p>
           <ul class="tl-list">
-            <li data-en="Shipped a Unity mobile game to the Google Play Store, contributing across gameplay code, UI, and release." data-ar="أطلقت لعبة موبايل بـ Unity على متجر Google Play، بالمساهمة في كود اللعب والواجهة والإطلاق.">Shipped a Unity mobile game to the Google Play Store, contributing across gameplay code, UI, and release.</li>
-            <li data-en="Coordinated remotely with the team using Git and GitHub." data-ar="تنسّقت مع الفريق عن بُعد باستخدام Git و GitHub.">Coordinated remotely with the team using Git and GitHub.</li>
+            <li data-i18n="shipped_a_unity_mobile_game_">Shipped a Unity mobile game to the Google Play Store, contributing across gameplay code, UI, and release.</li>
+            <li data-i18n="coordinated_remotely_with_th">Coordinated remotely with the team using Git and GitHub.</li>
           </ul>
         </li>
       </ol>
@@ -661,104 +173,104 @@
   </section>
 
   <section id="projects">
-    <p class="eyebrow-mono" data-en="// 03 — PROJECTS" data-ar="// 03 — المشاريع">// 03 — PROJECTS</p>
-    <h2 class="section-title" data-en="Projects" data-ar="المشاريع" data-text="Projects">Projects</h2>
+    <p class="eyebrow-mono" data-i18n="03_projects">// 03 — PROJECTS</p>
+    <h2 class="section-title" data-i18n="projects" data-text="Projects">Projects</h2>
 
     <div class="project-grid">
       <article class="card reveal">
-        <div class="card-tags"><span class="tag">itch.io</span><span class="tag" data-en="Unity · PC" data-ar="يونيتي · حاسوب">Unity · PC</span><span class="tag tag-fact" data-en="4 Stages" data-ar="4 مراحل">4 Stages</span></div>
-        <h3 data-en="Cybersecurity Educational Game" data-ar="لعبة تعليمية للأمن السيبراني">Cybersecurity Educational Game</h3>
-        <p class="card-meta" data-en="Freelance · 2025" data-ar="عمل مستقل · 2025">Freelance · 2025</p>
+        <div class="card-tags"><span class="tag tag-fact"> <a href="https://wedad.itch.io/cyber-security-game">itch.io</a></span><span class="tag" data-i18n="unity_pc">Unity · PC</span></div>
+        <h3 data-i18n="cybersecurity_educational_ga">Cybersecurity Educational Game</h3>
+        <p class="card-meta" data-i18n="freelance_2025">Freelance · 2025</p>
         <ul>
-          <li data-en="Designed and built a 4-stage educational game from scratch for a client, with a different gameplay mechanic per stage — drag-and-drop, shooter, card-sorting, and quiz." data-ar="صمّمت وبنيت لعبة تعليمية من 4 مراحل من الصفر لعميل، بميكانيكا لعب مختلفة في كل مرحلة — السحب والإفلات، الرماية، ترتيب البطاقات، والاختبار.">Designed and built a 4-stage educational game from scratch for a client, with a different gameplay mechanic per stage — drag-and-drop, shooter, card-sorting, and quiz.</li>
-          <li data-en="Built supporting systems end-to-end: player auth, save data, in-game economy and shop, end-of-game certificate, and a performance report." data-ar="بنيت الأنظمة الداعمة بالكامل: تسجيل دخول اللاعب، حفظ البيانات، اقتصاد ومتجر داخل اللعبة، شهادة نهاية اللعبة، وتقرير أداء.">Built supporting systems end-to-end: player auth, save data, in-game economy and shop, end-of-game certificate, and a performance report.</li>
+          <li data-i18n="designed_and_built_a_4_stage">Designed and built a 4-stage educational game from scratch for a client, with a different gameplay mechanic per stage, drag-and-drop, shooter, card-sorting, and quiz.</li>
+          <li data-i18n="built_supporting_systems_end">Built supporting systems end-to-end: player auth, save data, in-game economy and shop, end-of-game certificate, and a performance report.</li>
         </ul>
       </article>
 
       <article class="card reveal">
-        <div class="card-tags"><span class="tag">GitHub</span><span class="tag" data-en="Unity · ECS / DOTS" data-ar="يونيتي · ECS / DOTS">Unity · ECS / DOTS</span><span class="tag tag-fact" data-en="vs Procedural AI" data-ar="ضد ذكاء اصطناعي عشوائي">vs Procedural AI</span></div>
-        <h3 data-en="Battle Simulator" data-ar="محاكي المعارك">Battle Simulator</h3>
-        <p class="card-meta" data-en="Personal · 2024" data-ar="مشروع شخصي · 2024">Personal · 2024</p>
+        <div class="card-tags"><span class="tag tag-fact"> <a href="https://github.com/we-dad/BattleSimulator.git">GitHub</a></span><span class="tag" data-i18n="unity_ecs_dots">Unity · ECS / DOTS</span></div>
+        <h3 data-i18n="battle_simulator">Battle Simulator</h3>
+        <p class="card-meta" data-i18n="personal_2024">Personal · 2024</p>
         <ul>
-          <li data-en="Unity ECS strategy game where players compose a Blue Team to counter a procedurally generated Red Team each match." data-ar="لعبة استراتيجية بـ Unity ECS يكوّن فيها اللاعبون فريقاً أزرق لمواجهة فريق أحمر يُولَّد عشوائياً في كل مباراة.">Unity ECS strategy game where players compose a Blue Team to counter a procedurally generated Red Team each match.</li>
-          <li data-en="Built on a data-oriented architecture for modularity and performance at high entity counts — unit behaviors and stats can be swapped without touching combat code." data-ar="مبنية على بنية تعتمد على البيانات لمرونة وأداء عاليين مع أعداد كبيرة من الكيانات — يمكن تبديل سلوكيات وإحصاءات الوحدات دون لمس كود القتال.">Built on a data-oriented architecture for modularity and performance at high entity counts — unit behaviors and stats can be swapped without touching combat code.</li>
+          <li data-i18n="unity_ecs_strategy_game_wher">Unity ECS strategy game where players compose a Blue Team to counter a procedurally generated Red Team each match.</li>
+          <li data-i18n="built_on_a_data_oriented_arc">Built on a data-oriented architecture for modularity and performance at high entity counts, unit behaviors and stats can be swapped without touching combat code.</li>
         </ul>
       </article>
 
       <article class="card reveal">
-        <div class="card-tags"><span class="tag">GitHub</span><span class="tag" data-en="Unity · Mobile Web" data-ar="يونيتي · ويب موبايل">Unity · Mobile Web</span><span class="tag tag-fact" data-en="Sole Programmer" data-ar="مبرمجة منفردة">Sole Programmer</span></div>
+        <div class="card-tags"><span class="tag tag-fact"> <a href="https://github.com/we-dad/Albalsha-Beileid.git">GitHub</a></span><span class="tag" data-i18n="unity_mobile_web">Unity · Mobile Web</span></div>
         <h3>Albalsha-Beileid</h3>
         <p class="card-meta">GamifierSA · 2024</p>
         <ul>
-          <li data-en="Sole programmer on a mobile web game launched for Eid al-Fitr, featuring a collection of quick, random mini-games inspired by Eid traditions." data-ar="المبرمجة الوحيدة في لعبة ويب للموبايل أُطلقت بمناسبة عيد الفطر، تضم مجموعة من الألعاب المصغّرة السريعة والعشوائية المستوحاة من تقاليد العيد.">Sole programmer on a mobile web game launched for Eid al-Fitr, featuring a collection of quick, random mini-games inspired by Eid traditions.</li>
-          <li data-en="Owned the full Unity codebase from gameplay logic to release." data-ar="امتلكت كود Unity بالكامل من منطق اللعب حتى الإطلاق.">Owned the full Unity codebase from gameplay logic to release.</li>
+          <li data-i18n="sole_programmer_on_a_mobile_">Sole programmer on a mobile web game launched for Eid al-Fitr, featuring a collection of quick, random mini-games inspired by Eid traditions.</li>
+          <li data-i18n="owned_the_full_unity_codebas">Owned the full Unity codebase from gameplay logic to release.</li>
         </ul>
       </article>
 
       <article class="card reveal">
-        <div class="card-tags"><span class="tag">GitHub</span><span class="tag" data-en="Unity · Mobile" data-ar="يونيتي · موبايل">Unity · Mobile</span><span class="tag tag-fact" data-en="Shooter Mechanic" data-ar="ميكانيكا رماية">Shooter Mechanic</span></div>
-        <h3 data-en="Jaber Chem — Electron Configuration" data-ar="جابر كيم — التوزيع الإلكتروني">Jaber Chem — Electron Configuration</h3>
+        <div class="card-tags"><span class="tag tag-fact"> <a href="https://github.com/we-dad/Jaber-Chem.git">GitHub</a></span><span class="tag" data-i18n="unity_mobile">Unity · Mobile</span></div>
+        <h3 data-i18n="jaber_chem_electron_configur">Jaber Chem — Electron Configuration</h3>
         <p class="card-meta">GamifierSA · 2024</p>
         <ul>
-          <li data-en="Programmed the complete Electron Configuration mini-game for Jaber Chem, an educational chemistry title." data-ar="برمجت لعبة التوزيع الإلكتروني المصغّرة بالكامل لـ Jaber Chem، وهي لعبة تعليمية في الكيمياء.">Programmed the complete Electron Configuration mini-game for Jaber Chem, an educational chemistry title.</li>
-          <li data-en="Built a shooter-style mechanic where players fire electrons to fill atomic configurations." data-ar="بنيت ميكانيكا على طراز الرماية يطلق فيها اللاعبون إلكترونات لملء التوزيعات الذرية.">Built a shooter-style mechanic where players fire electrons to fill atomic configurations.</li>
+          <li data-i18n="programmed_the_complete_elec">Programmed the complete Electron Configuration mini-game for Jaber Chem, an educational chemistry title.</li>
+          <li data-i18n="built_a_shooter_style_mechan">Built a shooter-style mechanic where players fire electrons to fill atomic configurations.</li>
         </ul>
       </article>
     </div>
   </section>
 
   <section id="education">
-    <p class="eyebrow-mono" data-en="// 04 — EDUCATION" data-ar="// 04 — التعليم">// 04 — EDUCATION</p>
-    <h2 class="section-title" data-en="Education" data-ar="التعليم" data-text="Education">Education</h2>
+    <p class="eyebrow-mono" data-i18n="04_education">// 04 — EDUCATION</p>
+    <h2 class="section-title" data-i18n="education" data-text="Education">Education</h2>
 
     <div class="edu-list">
       <div class="edu-item reveal">
-        <span class="tl-date" data-en="OCT 2022 — JUN 2023 · RIYADH, KSA" data-ar="أكتوبر 2022 — يونيو 2023 · الرياض، السعودية">OCT 2022 — JUN 2023 · RIYADH, KSA</span>
-        <h3 data-en="iOS App Developer Program" data-ar="برنامج تطوير تطبيقات iOS">iOS App Developer Program</h3>
+        <span class="tl-date" data-i18n="oct_2022_jun_2023_riyadh_ksa">OCT 2022 — JUN 2023 · RIYADH, KSA</span>
+        <h3 data-i18n="ios_app_developer_program">iOS App Developer Program</h3>
         <p class="tl-org">Apple Developer Academy | TUWAIQ</p>
-        <p data-en="9-month Challenge-Based Learning program. Shipped four iOS apps in Swift / Xcode with cross-functional teams." data-ar="برنامج تعلّم قائم على التحديات لمدة 9 أشهر. أطلقت أربع تطبيقات iOS بـ Swift / Xcode مع فرق متعددة التخصصات.">9-month Challenge-Based Learning program. Shipped four iOS apps in Swift / Xcode with cross-functional teams.</p>
+        <p data-i18n="9_month_challenge_based_lear">9-month Challenge-Based Learning program. Shipped four iOS apps in Swift / Xcode with cross-functional teams.</p>
       </div>
       <div class="edu-item reveal">
-        <span class="tl-date" data-en="JUL 2021 — NOV 2021 · REMOTE" data-ar="يوليو 2021 — نوفمبر 2021 · عن بُعد">JUL 2021 — NOV 2021 · REMOTE</span>
-        <h3 data-en="Game Development Bootcamp" data-ar="معسكر تطوير الألعاب">Game Development Bootcamp</h3>
+        <span class="tl-date" data-i18n="jul_2021_nov_2021_remote">JUL 2021 — NOV 2021 · REMOTE</span>
+        <h3 data-i18n="game_development_bootcamp">Game Development Bootcamp</h3>
         <p class="tl-org">Saudi Digital Academy × Coding Dojo</p>
-        <p data-en="Intensive program covering Unity, C#, game design, UX, multiplayer patterns, and mobile publishing." data-ar="برنامج مكثّف يغطي Unity وC# وتصميم الألعاب وتجربة المستخدم وأنماط اللعب الجماعي والنشر على الموبايل.">Intensive program covering Unity, C#, game design, UX, multiplayer patterns, and mobile publishing.</p>
+        <p data-i18n="intensive_program_covering_u">Intensive program covering Unity, C#, game design, UX, multiplayer patterns, and mobile publishing.</p>
       </div>
       <div class="edu-item reveal">
-        <span class="tl-date" data-en="JAN 2016 — APR 2021" data-ar="يناير 2016 — أبريل 2021">JAN 2016 — APR 2021</span>
-        <h3 data-en="B.Sc. Computer Science" data-ar="بكالوريوس علوم الحاسب">B.Sc. Computer Science</h3>
-        <p class="tl-org" data-en="Taibah University" data-ar="جامعة طيبة">Taibah University</p>
+        <span class="tl-date" data-i18n="jan_2016_apr_2021">JAN 2016 — APR 2021</span>
+        <h3 data-i18n="b_sc_computer_science">B.Sc. Computer Science</h3>
+        <p class="tl-org" data-i18n="taibah_university">Taibah University</p>
       </div>
     </div>
 
     <div class="lang-row">
-      <span data-en="Arabic — Native" data-ar="العربية — اللغة الأم"><strong>Arabic</strong> — Native</span>
-      <span data-en="English — Advanced" data-ar="الإنجليزية — متقدمة"><strong>English</strong> — Advanced</span>
+      <span data-i18n="arabic_native"><strong>Arabic</strong> — Native</span>
+      <span data-i18n="english_advanced"><strong>English</strong> — Advanced</span>
     </div>
   </section>
 
   <footer class="contact frame" id="contact">
 
-    <p class="eyebrow-mono" data-en="// 05 — CONTACT" data-ar="// 05 — تواصل">// 05 — CONTACT</p>
-    <h2 class="section-title" data-en="Contact" data-ar="تواصل" data-text="Contact">Contact</h2>
+    <p class="eyebrow-mono" data-i18n="05_contact">// 05 — CONTACT</p>
+    <h2 class="section-title" data-i18n="contact" data-text="Contact">Contact</h2>
 
     <div class="contact-grid">
       <div class="contact-item">
-        <h4 data-en="Email" data-ar="البريد الإلكتروني">Email</h4>
+        <h4 data-i18n="email">Email</h4>
         <a href="mailto:wedad.salem@proton.me">wedad.salem@proton.me</a>
       </div>
       <div class="contact-item">
-        <h4 data-en="Phone" data-ar="الهاتف">Phone</h4>
+        <h4 data-i18n="phone">Phone</h4>
         <a href="tel:+966532459723">+966 53 245 9723</a>
       </div>
       <div class="contact-item">
-        <h4 data-en="Location" data-ar="الموقع">Location</h4>
-        <span data-en="Saudi Arabia" data-ar="المملكة العربية السعودية">Saudi Arabia</span>
+        <h4 data-i18n="location">Location</h4>
+        <span data-i18n="saudi_arabia">Saudi Arabia</span>
       </div>
       <div class="contact-item">
-        <h4 data-en="Profiles" data-ar="الملفات">Profiles</h4>
+        <h4 data-i18n="profiles">Profiles</h4>
         <div class="social-row">
-          <a class="social-icon" href="www.linkedin.com/in/wedad-salem" id="linkedin-link" aria-label="LinkedIn" title="LinkedIn">
+          <a class="social-icon" href="https://www.linkedin.com/in/wedad-salem" id="linkedin-link" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.27c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.27h-3v-4.5c0-1.07-.02-2.45-1.5-2.45-1.5 0-1.73 1.17-1.73 2.37v4.58h-3v-9h2.88v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
           </a>
           <a class="social-icon" href="https://github.com/we-dad" id="github-link" aria-label="GitHub" title="GitHub">
@@ -770,215 +282,19 @@
     </div>
 
     <div class="foot-note">
-      <span data-en="© 2026 WEDAD SALEM" data-ar="© 2026 وداد سالم">© 2026 WEDAD SALEM</span>
-      <span data-en="BUILD v2026.1" data-ar="الإصدار v2026.1">BUILD v2026.1</span>
+      <span data-i18n="2026_wedad_salem">© 2026 WEDAD SALEM</span>
+      <span data-i18n="build_v2026_1">BUILD v2026.1</span>
     </div>
   </footer>
 
 </div>
 
-<script>
-  // Language toggle: English / Arabic, with RTL switching.
-  (function () {
-    const btn = document.getElementById('lang-toggle');
-    if (!btn) return;
-    let current = 'en';
-
-    function applyLang(lang) {
-      current = lang;
-      document.documentElement.lang = lang;
-      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-      document.body.classList.toggle('is-ar', lang === 'ar');
-
-      document.querySelectorAll('[data-en]').forEach(el => {
-        const val = (lang === 'ar') ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-        if (val == null) return;
-        el.textContent = val;
-        if (el.hasAttribute('data-text')) el.setAttribute('data-text', val);
-      });
-
-      btn.textContent = (lang === 'ar') ? 'EN' : 'AR';
-
-      // The Space Journey route line/ship is built from measured star
-      // positions, which move when the layout mirrors for Arabic — rebuild it.
-      requestAnimationFrame(() => {
-        window.dispatchEvent(new Event('resize'));
-      });
-    }
-
-    btn.addEventListener('click', () => applyLang(current === 'en' ? 'ar' : 'en'));
-    applyLang('en');
-  })();
-</script>
-
-<script>
-  // Boot screen: a short loading sequence before the page reveals itself.
-  (function () {
-    const boot = document.getElementById('boot-screen');
-    if (!boot) return;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) { boot.remove(); return; }
-
-    const fill = document.getElementById('boot-fill');
-    const pct = document.getElementById('boot-pct');
-    let p = 0;
-    const id = setInterval(() => {
-      p += Math.random() * 18 + 7;
-      if (p >= 100) p = 100;
-      fill.style.width = p + '%';
-      pct.textContent = Math.round(p) + '%';
-      if (p >= 100) {
-        clearInterval(id);
-        setTimeout(() => {
-          boot.classList.add('is-done');
-          setTimeout(() => boot.remove(), 650);
-        }, 200);
-      }
-    }, 130);
-  })();
-</script>
-
-<script>
-  // Scroll-reveal for timeline, loadout, and project entries
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const items = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    items.forEach(el => io.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-  }
-</script>
-
-<script>
-  // Space Journey: build a wavy route through the gold stars, then hop a
-  // small ship from stop to stop along it.
-  (function () {
-    const route = document.querySelector('.space-route');
-    if (!route) return;
-    const svg = route.querySelector('.route-svg');
-    const pathEl = route.querySelector('.route-path');
-    const ship = route.querySelector('.route-ship');
-    const stars = Array.from(route.querySelectorAll('.tl-star'));
-    if (!svg || !pathEl || !ship || stars.length < 2) return;
-
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let rafId = null;
-    let generation = 0;
-
-    function easeInOut(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
-
-    function build() {
-      const rect = route.getBoundingClientRect();
-      svg.setAttribute('width', rect.width);
-      svg.setAttribute('height', rect.height);
-      svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
-
-      const points = stars.map(s => {
-        const r = s.getBoundingClientRect();
-        return { x: r.left + r.width / 2 - rect.left, y: r.top + r.height / 2 - rect.top };
-      });
-
-      let d = `M ${points[0].x} ${points[0].y}`;
-      const checkpoints = [0];
-      let cumulative = 0;
-
-      for (let i = 0; i < points.length - 1; i++) {
-        const p0 = points[i], p1 = points[i + 1];
-        const midY = (p0.y + p1.y) / 2;
-        const bulge = (i % 2 === 0) ? 36 : -36;
-        const c1x = p0.x + bulge, c1y = midY - (p1.y - p0.y) / 4;
-        const c2x = p1.x + bulge, c2y = midY + (p1.y - p0.y) / 4;
-        d += ` C ${c1x} ${c1y}, ${c2x} ${c2y}, ${p1.x} ${p1.y}`;
-
-        const seg = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        seg.setAttribute('d', `M ${p0.x} ${p0.y} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${p1.x} ${p1.y}`);
-        svg.appendChild(seg);
-        cumulative += seg.getTotalLength();
-        svg.removeChild(seg);
-        checkpoints.push(cumulative);
-      }
-
-      pathEl.setAttribute('d', d);
-      return checkpoints;
-    }
-
-    function placeShipAt(len) {
-      const pt = pathEl.getPointAtLength(len);
-      ship.style.transform = `translate(${pt.x - 6}px, ${pt.y - 6}px)`;
-    }
-
-    function start() {
-      generation++;
-      const myGen = generation;
-      if (rafId) cancelAnimationFrame(rafId);
-
-      const checkpoints = build();
-      if (checkpoints.length < 2) return;
-
-      if (reduceMotion) {
-        placeShipAt(checkpoints[checkpoints.length - 1]);
-        ship.classList.add('is-visible');
-        return;
-      }
-
-      ship.classList.remove('is-visible');
-
-      function travel(index) {
-        if (generation !== myGen) return;
-
-        if (index >= checkpoints.length - 1) {
-          setTimeout(() => {
-            if (generation !== myGen) return;
-            ship.classList.remove('is-visible');
-            setTimeout(() => {
-              if (generation !== myGen) return;
-              placeShipAt(checkpoints[0]);
-              requestAnimationFrame(() => { if (generation === myGen) ship.classList.add('is-visible'); });
-              travel(0);
-            }, 600);
-          }, 1500);
-          return;
-        }
-
-        const from = checkpoints[index], to = checkpoints[index + 1];
-        const duration = 1100;
-        const t0 = performance.now();
-        ship.classList.add('is-visible');
-
-        function frame(now) {
-          if (generation !== myGen) return;
-          const t = Math.min(1, (now - t0) / duration);
-          placeShipAt(from + (to - from) * easeInOut(t));
-          if (t < 1) {
-            rafId = requestAnimationFrame(frame);
-          } else {
-            setTimeout(() => travel(index + 1), 650);
-          }
-        }
-        rafId = requestAnimationFrame(frame);
-      }
-
-      placeShipAt(checkpoints[0]);
-      requestAnimationFrame(() => { if (generation === myGen) ship.classList.add('is-visible'); });
-      travel(0);
-    }
-
-    start();
-    window.addEventListener('load', start);
-    let resizeTimer = null;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(start, 250);
-    });
-  })();
-</script>
+<script src="lang-en.js"></script>
+<script src="lang-ar.js"></script>
+<script src="lang-toggle.js"></script>
+<script src="boot.js"></script>
+<script src="reveal.js"></script>
+<script src="space-route.js"></script>
 
 </body>
 </html>
