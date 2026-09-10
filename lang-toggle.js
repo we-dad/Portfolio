@@ -1,4 +1,3 @@
-
 // Language toggle: English / Arabic, with RTL switching.
 // Reads text from window.I18N.en / window.I18N.ar (see lang-en.js / lang-ar.js),
 // looked up by each element's data-i18n="key" attribute.

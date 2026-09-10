@@ -125,7 +125,6 @@ a:focus-visible, button:focus-visible{
 
 @media (max-width: 760px){ .topnav{ display: none; } }
 
-/* ---------- Corner frame device ---------- */
 /* ---------- Chamfered panel frame (signature shape) ---------- */
 .frame{
   position: relative;
@@ -135,7 +134,6 @@ a:focus-visible, button:focus-visible{
           100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut))
   );
 }
-
 
 /* ---------- Hero ---------- */
 .hero{
@@ -156,7 +154,7 @@ a:focus-visible, button:focus-visible{
   font-size: clamp(2.6rem, 6vw, 4.6rem); margin: 0 0 18px; line-height: 1.02;
 }
 .lede{ max-width: 620px; color: var(--text); font-size: 1.05rem; margin: 0 0 30px; }
-.hero-actions{ display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.hero-actions{ display: flex; gap: 14px; flex-wrap: wrap; }
 .btn{
   font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.06em;
   padding: 12px 24px; display: inline-block;
@@ -167,11 +165,6 @@ a:focus-visible, button:focus-visible{
 .btn-primary:hover{ transform: translateY(-2px); }
 .btn-ghost{ background: transparent; color: var(--text); border: 1px solid var(--hairline); }
 .btn-ghost:hover{ border-color: var(--amber); color: var(--amber); transform: translateY(-2px); }
-
-.telemetry{
-  font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);
-  letter-spacing: 0.08em; border-top: 1px solid var(--hairline); padding-top: 16px;
-}
 
 .player-card{
   border: 1px solid var(--frame); background: var(--panel-2);
@@ -201,7 +194,7 @@ a:focus-visible, button:focus-visible{
   font-size: 0.68rem; color: var(--text-dim); margin-bottom: 6px; letter-spacing: 0.06em;
 }
 .pc-xp-bar{ height: 8px; background: var(--void); border: 1px solid var(--hairline); overflow: hidden; }
-.pc-xp-fill{ height: 100%; width: 78%; background: linear-gradient(90deg, var(--amber), var(--violet)); }
+.pc-xp-fill{ height: 100%; width: 80%; background: linear-gradient(90deg, var(--amber), var(--violet)); }
 
 .scan-sweep{
   position: absolute; left: 0; right: 0; height: 2px; top: 0;
@@ -219,21 +212,20 @@ a:focus-visible, button:focus-visible{
 }
 
 /* ---------- Section shell ---------- */
-main section, footer.contact{ padding: 92px 0 0; }
+main section, section, footer.contact{ padding: 92px 0 0; }
 .eyebrow-mono{
   font-family: var(--font-mono); color: var(--text-dim); font-size: 0.74rem;
   letter-spacing: 0.12em; margin: 0 0 10px;
 }
 .section-title{
   font-family: var(--font-display); font-weight: 600; letter-spacing: 0.03em;
-  font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 12px; color: var(--text);
+  font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 32px; color: var(--text);
 }
-.section-sub{ color: var(--text-dim); max-width: 560px; margin: 0 0 44px; }
 
 .reveal{ opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .reveal.is-visible{ opacity: 1; transform: translateY(0); }
 
-/* ---------- Loadout ---------- */
+/* ---------- Skills ---------- */
 .loadout-rows{ display: flex; flex-direction: column; gap: 12px; }
 .loadout-row{
   display: flex; align-items: stretch;
@@ -313,6 +305,7 @@ main section, footer.contact{ padding: 92px 0 0; }
 .timeline li:nth-child(3) .tl-star{ animation-delay: 0.9s; }
 .timeline li:nth-child(4) .tl-star{ animation-delay: 1.35s; }
 .timeline li:nth-child(5) .tl-star{ animation-delay: 1.8s; }
+.timeline li:nth-child(6) .tl-star{ animation-delay: 2.25s; }
 .tl-date{
   font-family: var(--font-mono); font-size: 0.74rem; color: var(--violet);
   letter-spacing: 0.06em; display: block; margin-bottom: 6px;
@@ -320,20 +313,25 @@ main section, footer.contact{ padding: 92px 0 0; }
 .tl-role{ font-family: var(--font-display); font-size: 1.18rem; font-weight: 600; margin: 0 0 2px; }
 .tl-org{ color: var(--text-dim); font-size: 0.92rem; margin: 0 0 12px; }
 .tl-list{ margin: 0; padding-left: 20px; color: var(--text); }
+.tl-list li::marker{ color: var(--violet); }
 .tl-list li{ padding: 0; margin-bottom: 6px; }
-.tl-list li::before{ content: none; }
 
-/* ---------- Projects / Level Select ---------- */
+/* ---------- Projects ---------- */
 .project-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 @media (max-width: 760px){ .project-grid{ grid-template-columns: 1fr; } }
 .card{
   position: relative; border: 1.5px solid var(--frame); background: var(--panel);
   padding: 26px 24px; transition: transform 0.18s ease, border-color 0.18s ease;
+  display: flex; flex-direction: column;
   --cut: 20px;
   clip-path: polygon(
           0 0, calc(100% - var(--cut)) 0, 100% var(--cut),
           100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut))
   );
+}
+.card::before{
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(90deg, var(--violet), var(--amber));
 }
 .card:hover{ transform: translateY(-3px); border-color: var(--frame-bright); }
 .card-tags{ display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
@@ -344,18 +342,27 @@ main section, footer.contact{ padding: 92px 0 0; }
   clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
 }
 .tag-fact{ color: var(--violet); border-color: rgba(166,107,255,0.4); }
-a {
-  color: var(--violet); /* Replaces default blue with an orange-red color */
-  text-decoration: none; /* Optional: removes the underline */
+.tag-link{
+  color: var(--violet); border-color: var(--violet);
+  background: rgba(166,107,255,0.12);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-a:hover {
-  color: #7d66b3;
-}
+.tag-link::before{ content: "↗ "; }
+.tag-link:hover{ background: var(--violet); color: var(--void); border-color: var(--violet); }
 .card h3{ font-family: var(--font-display); font-size: 1.25rem; margin: 0 0 4px; }
+.card-sub{
+  font-family: var(--font-body); font-size: 0.88rem; color: var(--violet);
+  margin: 0 0 6px; line-height: 1.35;
+}
 .card-meta{ font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); margin: 0 0 14px; }
 .card ul{ margin: 0; padding-left: 18px; color: var(--text); font-size: 0.94rem; }
+.card ul li::marker{ color: var(--amber); }
 .card ul li{ margin-bottom: 8px; }
-
+.more-projects{
+  margin: 26px 0 0; text-align: center;
+  font-family: var(--font-mono); font-size: 0.82rem;
+}
 
 /* ---------- Education ---------- */
 .edu-list{ display: flex; flex-direction: column; gap: 22px; }
@@ -369,9 +376,8 @@ a:hover {
   display: flex; gap: 28px; margin-top: 34px; font-family: var(--font-mono);
   font-size: 0.82rem; color: var(--text-dim); flex-wrap: wrap;
 }
-.lang-row strong{ color: var(--text); }
 
-/* ---------- Contact / Open Channel ---------- */
+/* ---------- Contact ---------- */
 footer.contact{
   margin: 92px auto 60px; max-width: var(--maxw);
   border: 1.5px solid var(--frame); padding: 56px 48px;
@@ -418,7 +424,7 @@ footer.contact{
 @media (max-width: 600px){
   .hero{ padding: 56px 24px 40px; }
   footer.contact{ padding: 40px 24px; }
-  main section{ padding-top: 64px; }
+  section{ padding-top: 64px; }
 }
 
 /* ---------- TV / glitch text effect ---------- */
@@ -479,8 +485,8 @@ footer.contact{
 /* ---------- Arabic / RTL ---------- */
 html[lang="ar"]{
   /* Arabic webfonts render visually smaller than the Latin ones at the
-     same size, and most component sizes use rem (relative to this root
-     font-size) — so bumping this scales the whole page up proportionally. */
+     same size, and most component sizes use rem — so bumping the root
+     font-size scales the whole page up proportionally. */
   font-size: 18.5px;
 }
 body.is-ar{
@@ -498,6 +504,6 @@ body.is-ar .tl-list, body.is-ar .card ul{ padding-left: 0; padding-right: 20px; 
 body.is-ar .timeline li{ padding: 0 42px 48px 0; }
 body.is-ar .tl-star{ left: auto; right: -3px; }
 body.is-ar .tl-list li, body.is-ar .card ul li{ line-height: 1.25; margin-bottom: 2px; }
-body.is-ar .lede, body.is-ar .section-sub, body.is-ar .edu-item p{ line-height: 1.6; }
+body.is-ar .lede, body.is-ar .edu-item p{ line-height: 1.6; }
 
 body.is-ar, body.is-ar *{ letter-spacing: normal !important; }
